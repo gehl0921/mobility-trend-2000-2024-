@@ -1,0 +1,709 @@
+region_origin,period_first_mobility,region_destination,n_outgoing,n_incoming,gain_index_stand
+CA,1,Central Asia & Eastern Europe,16,69,0.623529412
+CA,2,Central Asia & Eastern Europe,69,233,0.543046358
+CA,3,Central Asia & Eastern Europe,149,289,0.319634703
+CA,4,Central Asia & Eastern Europe,161,338,0.354709419
+CA,5,Central Asia & Eastern Europe,142,475,0.539708266
+CA,1,Eastern Asia,84,187,0.380073801
+CA,2,Eastern Asia,381,845,0.378466558
+CA,3,Eastern Asia,614,1349,0.374426898
+CA,4,Eastern Asia,791,1859,0.403018868
+CA,5,Eastern Asia,866,1856,0.363703159
+CA,1,Latin America & Caribbean,48,69,0.179487179
+CA,2,Latin America & Caribbean,144,344,0.409836066
+CA,3,Latin America & Caribbean,241,578,0.411477411
+CA,4,Latin America & Caribbean,315,988,0.516500384
+CA,5,Latin America & Caribbean,359,1608,0.634977123
+CA,1,Middle East & North Africa,65,108,0.248554913
+CA,2,Middle East & North Africa,398,677,0.259534884
+CA,3,Middle East & North Africa,986,1581,0.231788079
+CA,4,Middle East & North Africa,1240,2211,0.28136772
+CA,5,Middle East & North Africa,1154,3827,0.536639229
+CA,1,Oceania,59,65,0.048387097
+CA,2,Oceania,247,255,0.015936255
+CA,3,Oceania,478,376,-0.119437939
+CA,4,Oceania,546,487,-0.057115198
+CA,5,Oceania,446,417,-0.033603708
+CA,1,South Asia,14,34,0.416666667
+CA,2,South Asia,80,273,0.54674221
+CA,3,South Asia,192,585,0.505791506
+CA,4,South Asia,286,1005,0.55693261
+CA,5,South Asia,293,1730,0.710331191
+CA,1,South-eastern Asia,10,31,0.512195122
+CA,2,South-eastern Asia,84,116,0.16
+CA,3,South-eastern Asia,128,171,0.143812709
+CA,4,South-eastern Asia,176,252,0.177570093
+CA,5,South-eastern Asia,133,341,0.438818565
+CA,1,Southern Europe,40,63,0.223300971
+CA,2,Southern Europe,142,278,0.323809524
+CA,3,Southern Europe,194,450,0.397515528
+CA,4,Southern Europe,194,635,0.531966224
+CA,5,Southern Europe,236,575,0.418002466
+CA,1,Sub-Saharan Africa,8,11,0.157894737
+CA,2,Sub-Saharan Africa,39,67,0.264150943
+CA,3,Sub-Saharan Africa,98,114,0.075471698
+CA,4,Sub-Saharan Africa,153,232,0.205194805
+CA,5,Sub-Saharan Africa,158,518,0.532544379
+CA,1,US,815,636,-0.123363198
+CA,2,US,2986,2474,-0.093772894
+CA,3,US,4441,3216,-0.159984328
+CA,4,US,5475,3528,-0.216261246
+CA,5,US,4926,3548,-0.162615058
+CA,1,Western & Northern Europe,309,534,0.266903915
+CA,2,Western & Northern Europe,1313,2248,0.262566695
+CA,3,Western & Northern Europe,2189,3193,0.186547752
+CA,4,Western & Northern Europe,2670,3515,0.136620857
+CA,5,Western & Northern Europe,2745,3248,0.083931253
+Central Asia & Eastern Europe,1,CA,69,16,-0.623529412
+Central Asia & Eastern Europe,2,CA,233,69,-0.543046358
+Central Asia & Eastern Europe,3,CA,289,149,-0.319634703
+Central Asia & Eastern Europe,4,CA,338,161,-0.354709419
+Central Asia & Eastern Europe,5,CA,475,142,-0.539708266
+Central Asia & Eastern Europe,1,Central Asia & Eastern Europe,169,169,0
+Central Asia & Eastern Europe,2,Central Asia & Eastern Europe,587,587,0
+Central Asia & Eastern Europe,3,Central Asia & Eastern Europe,1138,1138,0
+Central Asia & Eastern Europe,4,Central Asia & Eastern Europe,2423,2423,0
+Central Asia & Eastern Europe,5,Central Asia & Eastern Europe,3691,3691,0
+Central Asia & Eastern Europe,1,Eastern Asia,127,83,-0.20952381
+Central Asia & Eastern Europe,2,Eastern Asia,309,295,-0.023178808
+Central Asia & Eastern Europe,3,Eastern Asia,293,364,0.108066971
+Central Asia & Eastern Europe,4,Eastern Asia,543,514,-0.02743614
+Central Asia & Eastern Europe,5,Eastern Asia,904,884,-0.011185682
+Central Asia & Eastern Europe,1,Latin America & Caribbean,17,14,-0.096774194
+Central Asia & Eastern Europe,2,Latin America & Caribbean,50,36,-0.162790698
+Central Asia & Eastern Europe,3,Latin America & Caribbean,84,84,0
+Central Asia & Eastern Europe,4,Latin America & Caribbean,134,165,0.10367893
+Central Asia & Eastern Europe,5,Latin America & Caribbean,180,367,0.341864717
+Central Asia & Eastern Europe,1,Middle East & North Africa,31,16,-0.319148936
+Central Asia & Eastern Europe,2,Middle East & North Africa,118,77,-0.21025641
+Central Asia & Eastern Europe,3,Middle East & North Africa,210,167,-0.114058355
+Central Asia & Eastern Europe,4,Middle East & North Africa,543,538,-0.004625347
+Central Asia & Eastern Europe,5,Middle East & North Africa,1244,1471,0.083609576
+Central Asia & Eastern Europe,1,Oceania,28,13,-0.365853659
+Central Asia & Eastern Europe,2,Oceania,106,47,-0.385620915
+Central Asia & Eastern Europe,3,Oceania,138,104,-0.140495868
+Central Asia & Eastern Europe,4,Oceania,195,117,-0.25
+Central Asia & Eastern Europe,5,Oceania,236,124,-0.311111111
+Central Asia & Eastern Europe,1,South Asia,5,5,0
+Central Asia & Eastern Europe,2,South Asia,41,24,-0.261538462
+Central Asia & Eastern Europe,3,South Asia,63,121,0.315217391
+Central Asia & Eastern Europe,4,South Asia,110,376,0.547325103
+Central Asia & Eastern Europe,5,South Asia,449,1029,0.392422192
+Central Asia & Eastern Europe,1,South-eastern Asia,1,1,0
+Central Asia & Eastern Europe,2,South-eastern Asia,31,18,-0.265306122
+Central Asia & Eastern Europe,3,South-eastern Asia,110,87,-0.116751269
+Central Asia & Eastern Europe,4,South-eastern Asia,240,265,0.04950495
+Central Asia & Eastern Europe,5,South-eastern Asia,501,594,0.084931507
+Central Asia & Eastern Europe,1,Southern Europe,107,68,-0.222857143
+Central Asia & Eastern Europe,2,Southern Europe,452,321,-0.169469599
+Central Asia & Eastern Europe,3,Southern Europe,634,599,-0.02838605
+Central Asia & Eastern Europe,4,Southern Europe,795,972,0.100169779
+Central Asia & Eastern Europe,5,Southern Europe,1409,1169,-0.093095423
+Central Asia & Eastern Europe,1,Sub-Saharan Africa,7,4,-0.272727273
+Central Asia & Eastern Europe,2,Sub-Saharan Africa,28,16,-0.272727273
+Central Asia & Eastern Europe,3,Sub-Saharan Africa,82,31,-0.451327434
+Central Asia & Eastern Europe,4,Sub-Saharan Africa,248,116,-0.362637363
+Central Asia & Eastern Europe,5,Sub-Saharan Africa,637,539,-0.083333333
+Central Asia & Eastern Europe,1,US,667,350,-0.311701082
+Central Asia & Eastern Europe,2,US,2080,1045,-0.3312
+Central Asia & Eastern Europe,3,US,2322,1434,-0.236421725
+Central Asia & Eastern Europe,4,US,3067,1643,-0.302335456
+Central Asia & Eastern Europe,5,US,3509,1399,-0.42991035
+Central Asia & Eastern Europe,1,Western & Northern Europe,858,485,-0.277736411
+Central Asia & Eastern Europe,2,Western & Northern Europe,2793,1456,-0.314662273
+Central Asia & Eastern Europe,3,Western & Northern Europe,4087,2076,-0.326302126
+Central Asia & Eastern Europe,4,Western & Northern Europe,5402,2759,-0.32385737
+Central Asia & Eastern Europe,5,Western & Northern Europe,7618,2755,-0.468813265
+Eastern Asia,1,CA,187,84,-0.380073801
+Eastern Asia,2,CA,845,381,-0.378466558
+Eastern Asia,3,CA,1349,614,-0.374426898
+Eastern Asia,4,CA,1859,791,-0.403018868
+Eastern Asia,5,CA,1856,866,-0.363703159
+Eastern Asia,1,Central Asia & Eastern Europe,83,127,0.20952381
+Eastern Asia,2,Central Asia & Eastern Europe,295,309,0.023178808
+Eastern Asia,3,Central Asia & Eastern Europe,364,293,-0.108066971
+Eastern Asia,4,Central Asia & Eastern Europe,514,543,0.02743614
+Eastern Asia,5,Central Asia & Eastern Europe,884,904,0.011185682
+Eastern Asia,1,Eastern Asia,649,649,0
+Eastern Asia,2,Eastern Asia,2751,2751,0
+Eastern Asia,3,Eastern Asia,4173,4173,0
+Eastern Asia,4,Eastern Asia,5157,5157,0
+Eastern Asia,5,Eastern Asia,5818,5818,0
+Eastern Asia,1,Latin America & Caribbean,22,21,-0.023255814
+Eastern Asia,2,Latin America & Caribbean,84,88,0.023255814
+Eastern Asia,3,Latin America & Caribbean,129,150,0.075268817
+Eastern Asia,4,Latin America & Caribbean,200,248,0.107142857
+Eastern Asia,5,Latin America & Caribbean,190,344,0.288389513
+Eastern Asia,1,Middle East & North Africa,37,24,-0.213114754
+Eastern Asia,2,Middle East & North Africa,199,137,-0.18452381
+Eastern Asia,3,Middle East & North Africa,557,257,-0.368550369
+Eastern Asia,4,Middle East & North Africa,936,621,-0.202312139
+Eastern Asia,5,Middle East & North Africa,1225,1116,-0.046561299
+Eastern Asia,1,Oceania,100,80,-0.111111111
+Eastern Asia,2,Oceania,648,310,-0.352818372
+Eastern Asia,3,Oceania,1293,594,-0.370429253
+Eastern Asia,4,Oceania,2374,1068,-0.379430564
+Eastern Asia,5,Oceania,2285,1508,-0.204851041
+Eastern Asia,1,South Asia,84,131,0.218604651
+Eastern Asia,2,South Asia,387,813,0.355
+Eastern Asia,3,South Asia,975,1634,0.252587198
+Eastern Asia,4,South Asia,1768,3881,0.374048504
+Eastern Asia,5,South Asia,2581,5281,0.343424065
+Eastern Asia,1,South-eastern Asia,209,119,-0.274390244
+Eastern Asia,2,South-eastern Asia,1005,719,-0.165893271
+Eastern Asia,3,South-eastern Asia,2678,1323,-0.338665334
+Eastern Asia,4,South-eastern Asia,4255,2827,-0.201637955
+Eastern Asia,5,South-eastern Asia,5531,4315,-0.12350193
+Eastern Asia,1,Southern Europe,40,40,0
+Eastern Asia,2,Southern Europe,221,206,-0.035128806
+Eastern Asia,3,Southern Europe,392,309,-0.118402282
+Eastern Asia,4,Southern Europe,543,542,-0.000921659
+Eastern Asia,5,Southern Europe,900,551,-0.240523777
+Eastern Asia,1,Sub-Saharan Africa,16,17,0.03030303
+Eastern Asia,2,Sub-Saharan Africa,81,45,-0.285714286
+Eastern Asia,3,Sub-Saharan Africa,206,107,-0.31629393
+Eastern Asia,4,Sub-Saharan Africa,520,394,-0.13785558
+Eastern Asia,5,Sub-Saharan Africa,1204,812,-0.194444444
+Eastern Asia,1,US,1834,1247,-0.190522558
+Eastern Asia,2,US,9628,4783,-0.336201513
+Eastern Asia,3,US,15710,7995,-0.325458764
+Eastern Asia,4,US,21122,8814,-0.411143773
+Eastern Asia,5,US,19102,8355,-0.391412026
+Eastern Asia,1,Western & Northern Europe,612,435,-0.169054441
+Eastern Asia,2,Western & Northern Europe,2864,1884,-0.206402696
+Eastern Asia,3,Western & Northern Europe,5570,3068,-0.289650382
+Eastern Asia,4,Western & Northern Europe,8727,4705,-0.299434187
+Eastern Asia,5,Western & Northern Europe,11670,5600,-0.351476549
+Latin America & Caribbean,1,CA,69,48,-0.179487179
+Latin America & Caribbean,2,CA,344,144,-0.409836066
+Latin America & Caribbean,3,CA,578,241,-0.411477411
+Latin America & Caribbean,4,CA,988,315,-0.516500384
+Latin America & Caribbean,5,CA,1608,359,-0.634977123
+Latin America & Caribbean,1,Central Asia & Eastern Europe,14,17,0.096774194
+Latin America & Caribbean,2,Central Asia & Eastern Europe,36,50,0.162790698
+Latin America & Caribbean,3,Central Asia & Eastern Europe,84,84,0
+Latin America & Caribbean,4,Central Asia & Eastern Europe,165,134,-0.10367893
+Latin America & Caribbean,5,Central Asia & Eastern Europe,367,180,-0.341864717
+Latin America & Caribbean,1,Eastern Asia,21,22,0.023255814
+Latin America & Caribbean,2,Eastern Asia,88,84,-0.023255814
+Latin America & Caribbean,3,Eastern Asia,150,129,-0.075268817
+Latin America & Caribbean,4,Eastern Asia,248,200,-0.107142857
+Latin America & Caribbean,5,Eastern Asia,344,190,-0.288389513
+Latin America & Caribbean,1,Latin America & Caribbean,144,144,0
+Latin America & Caribbean,2,Latin America & Caribbean,542,542,0
+Latin America & Caribbean,3,Latin America & Caribbean,1143,1143,0
+Latin America & Caribbean,4,Latin America & Caribbean,2931,2931,0
+Latin America & Caribbean,5,Latin America & Caribbean,4677,4677,0
+Latin America & Caribbean,1,Middle East & North Africa,3,6,0.333333333
+Latin America & Caribbean,2,Middle East & North Africa,22,15,-0.189189189
+Latin America & Caribbean,3,Middle East & North Africa,44,37,-0.086419753
+Latin America & Caribbean,4,Middle East & North Africa,110,105,-0.023255814
+Latin America & Caribbean,5,Middle East & North Africa,270,159,-0.258741259
+Latin America & Caribbean,1,Oceania,21,15,-0.166666667
+Latin America & Caribbean,2,Oceania,123,45,-0.464285714
+Latin America & Caribbean,3,Oceania,287,96,-0.498694517
+Latin America & Caribbean,4,Oceania,515,196,-0.448663854
+Latin America & Caribbean,5,Oceania,608,129,-0.649932157
+Latin America & Caribbean,1,South Asia,8,2,-0.6
+Latin America & Caribbean,2,South Asia,16,38,0.407407407
+Latin America & Caribbean,3,South Asia,37,105,0.478873239
+Latin America & Caribbean,4,South Asia,91,258,0.478510029
+Latin America & Caribbean,5,South Asia,294,321,0.043902439
+Latin America & Caribbean,2,South-eastern Asia,3,10,0.538461538
+Latin America & Caribbean,3,South-eastern Asia,19,22,0.073170732
+Latin America & Caribbean,4,South-eastern Asia,68,52,-0.133333333
+Latin America & Caribbean,5,South-eastern Asia,108,119,0.04845815
+Latin America & Caribbean,1,Southern Europe,165,157,-0.02484472
+Latin America & Caribbean,2,Southern Europe,870,635,-0.156146179
+Latin America & Caribbean,3,Southern Europe,1531,1529,-0.000653595
+Latin America & Caribbean,4,Southern Europe,2303,2829,0.102494154
+Latin America & Caribbean,5,Southern Europe,3813,2344,-0.238590223
+Latin America & Caribbean,1,Sub-Saharan Africa,2,4,0.333333333
+Latin America & Caribbean,2,Sub-Saharan Africa,29,19,-0.208333333
+Latin America & Caribbean,3,Sub-Saharan Africa,67,40,-0.252336449
+Latin America & Caribbean,4,Sub-Saharan Africa,118,74,-0.229166667
+Latin America & Caribbean,5,Sub-Saharan Africa,228,172,-0.14
+Latin America & Caribbean,1,US,527,316,-0.25029656
+Latin America & Caribbean,2,US,2101,1152,-0.29173071
+Latin America & Caribbean,3,US,3315,1873,-0.277949113
+Latin America & Caribbean,4,US,5108,2304,-0.378305451
+Latin America & Caribbean,5,US,7106,1885,-0.580691803
+Latin America & Caribbean,1,Western & Northern Europe,317,248,-0.122123894
+Latin America & Caribbean,2,Western & Northern Europe,1490,1007,-0.193432119
+Latin America & Caribbean,3,Western & Northern Europe,2516,1505,-0.251429993
+Latin America & Caribbean,4,Western & Northern Europe,4463,2111,-0.357773045
+Latin America & Caribbean,5,Western & Northern Europe,6369,1688,-0.580985478
+Middle East & North Africa,1,CA,108,65,-0.248554913
+Middle East & North Africa,2,CA,677,398,-0.259534884
+Middle East & North Africa,3,CA,1581,986,-0.231788079
+Middle East & North Africa,4,CA,2211,1240,-0.28136772
+Middle East & North Africa,5,CA,3827,1154,-0.536639229
+Middle East & North Africa,1,Central Asia & Eastern Europe,16,31,0.319148936
+Middle East & North Africa,2,Central Asia & Eastern Europe,77,118,0.21025641
+Middle East & North Africa,3,Central Asia & Eastern Europe,167,210,0.114058355
+Middle East & North Africa,4,Central Asia & Eastern Europe,538,543,0.004625347
+Middle East & North Africa,5,Central Asia & Eastern Europe,1471,1244,-0.083609576
+Middle East & North Africa,1,Eastern Asia,24,37,0.213114754
+Middle East & North Africa,2,Eastern Asia,137,199,0.18452381
+Middle East & North Africa,3,Eastern Asia,257,557,0.368550369
+Middle East & North Africa,4,Eastern Asia,621,936,0.202312139
+Middle East & North Africa,5,Eastern Asia,1116,1225,0.046561299
+Middle East & North Africa,1,Latin America & Caribbean,6,3,-0.333333333
+Middle East & North Africa,2,Latin America & Caribbean,15,22,0.189189189
+Middle East & North Africa,3,Latin America & Caribbean,37,44,0.086419753
+Middle East & North Africa,4,Latin America & Caribbean,105,110,0.023255814
+Middle East & North Africa,5,Latin America & Caribbean,159,270,0.258741259
+Middle East & North Africa,1,Middle East & North Africa,58,58,0
+Middle East & North Africa,2,Middle East & North Africa,341,341,0
+Middle East & North Africa,3,Middle East & North Africa,1231,1231,0
+Middle East & North Africa,4,Middle East & North Africa,2073,2073,0
+Middle East & North Africa,5,Middle East & North Africa,3820,3820,0
+Middle East & North Africa,1,Oceania,17,21,0.105263158
+Middle East & North Africa,2,Oceania,134,143,0.032490975
+Middle East & North Africa,3,Oceania,519,314,-0.246098439
+Middle East & North Africa,4,Oceania,1096,571,-0.314937013
+Middle East & North Africa,5,Oceania,1280,589,-0.369716426
+Middle East & North Africa,1,South Asia,10,36,0.565217391
+Middle East & North Africa,2,South Asia,51,181,0.560344828
+Middle East & North Africa,3,South Asia,122,792,0.733041575
+Middle East & North Africa,4,South Asia,340,1682,0.663699308
+Middle East & North Africa,5,South Asia,765,2693,0.557547715
+Middle East & North Africa,1,South-eastern Asia,4,9,0.384615385
+Middle East & North Africa,2,South-eastern Asia,71,69,-0.014285714
+Middle East & North Africa,3,South-eastern Asia,348,595,0.261930011
+Middle East & North Africa,4,South-eastern Asia,406,1421,0.555555556
+Middle East & North Africa,5,South-eastern Asia,877,1634,0.301473517
+Middle East & North Africa,1,Southern Europe,34,24,-0.172413793
+Middle East & North Africa,2,Southern Europe,148,103,-0.179282869
+Middle East & North Africa,3,Southern Europe,340,373,0.04628331
+Middle East & North Africa,4,Southern Europe,614,699,0.064737243
+Middle East & North Africa,5,Southern Europe,1467,826,-0.279546446
+Middle East & North Africa,1,Sub-Saharan Africa,3,8,0.454545455
+Middle East & North Africa,2,Sub-Saharan Africa,39,28,-0.164179104
+Middle East & North Africa,3,Sub-Saharan Africa,95,97,0.010416667
+Middle East & North Africa,4,Sub-Saharan Africa,237,206,-0.069977427
+Middle East & North Africa,5,Sub-Saharan Africa,427,485,0.063596491
+Middle East & North Africa,1,US,367,273,-0.146875
+Middle East & North Africa,2,US,1775,1118,-0.227099896
+Middle East & North Africa,3,US,3649,2212,-0.245180003
+Middle East & North Africa,4,US,5919,3081,-0.315333333
+Middle East & North Africa,5,US,7828,3653,-0.363644282
+Middle East & North Africa,1,Western & Northern Europe,240,328,0.154929577
+Middle East & North Africa,2,Western & Northern Europe,1298,1470,0.062138728
+Middle East & North Africa,3,Western & Northern Europe,2855,3464,0.096376009
+Middle East & North Africa,4,Western & Northern Europe,4453,5002,0.058064516
+Middle East & North Africa,5,Western & Northern Europe,7808,5024,-0.216957606
+Oceania,1,CA,65,59,-0.048387097
+Oceania,2,CA,255,247,-0.015936255
+Oceania,3,CA,376,478,0.119437939
+Oceania,4,CA,487,546,0.057115198
+Oceania,5,CA,417,446,0.033603708
+Oceania,1,Central Asia & Eastern Europe,13,28,0.365853659
+Oceania,2,Central Asia & Eastern Europe,47,106,0.385620915
+Oceania,3,Central Asia & Eastern Europe,104,138,0.140495868
+Oceania,4,Central Asia & Eastern Europe,117,195,0.25
+Oceania,5,Central Asia & Eastern Europe,124,236,0.311111111
+Oceania,1,Eastern Asia,80,100,0.111111111
+Oceania,2,Eastern Asia,310,648,0.352818372
+Oceania,3,Eastern Asia,594,1293,0.370429253
+Oceania,4,Eastern Asia,1068,2374,0.379430564
+Oceania,5,Eastern Asia,1508,2285,0.204851041
+Oceania,1,Latin America & Caribbean,15,21,0.166666667
+Oceania,2,Latin America & Caribbean,45,123,0.464285714
+Oceania,3,Latin America & Caribbean,96,287,0.498694517
+Oceania,4,Latin America & Caribbean,196,515,0.448663854
+Oceania,5,Latin America & Caribbean,129,608,0.649932157
+Oceania,1,Middle East & North Africa,21,17,-0.105263158
+Oceania,2,Middle East & North Africa,143,134,-0.032490975
+Oceania,3,Middle East & North Africa,314,519,0.246098439
+Oceania,4,Middle East & North Africa,571,1096,0.314937013
+Oceania,5,Middle East & North Africa,589,1280,0.369716426
+Oceania,1,Oceania,81,81,0
+Oceania,2,Oceania,398,398,0
+Oceania,3,Oceania,667,667,0
+Oceania,4,Oceania,819,819,0
+Oceania,5,Oceania,798,798,0
+Oceania,1,South Asia,12,25,0.351351351
+Oceania,2,South Asia,75,240,0.523809524
+Oceania,3,South Asia,204,651,0.522807018
+Oceania,4,South Asia,404,1274,0.518474374
+Oceania,5,South Asia,496,1923,0.589913187
+Oceania,1,South-eastern Asia,52,52,0
+Oceania,2,South-eastern Asia,331,289,-0.067741935
+Oceania,3,South-eastern Asia,810,660,-0.102040816
+Oceania,4,South-eastern Asia,1240,1140,-0.042016807
+Oceania,5,South-eastern Asia,1012,1327,0.134672937
+Oceania,1,Southern Europe,13,20,0.212121212
+Oceania,2,Southern Europe,67,155,0.396396396
+Oceania,3,Southern Europe,115,346,0.501084599
+Oceania,4,Southern Europe,137,484,0.558776167
+Oceania,5,Southern Europe,144,309,0.364238411
+Oceania,1,Sub-Saharan Africa,7,17,0.416666667
+Oceania,2,Sub-Saharan Africa,39,63,0.235294118
+Oceania,3,Sub-Saharan Africa,76,131,0.265700483
+Oceania,4,Sub-Saharan Africa,130,339,0.445628998
+Oceania,5,Sub-Saharan Africa,146,460,0.518151815
+Oceania,1,US,339,208,-0.239488117
+Oceania,2,US,953,882,-0.038692098
+Oceania,3,US,1369,1532,0.056187522
+Oceania,4,US,1802,1591,-0.062186855
+Oceania,5,US,1544,1310,-0.081990189
+Oceania,1,Western & Northern Europe,396,441,0.053763441
+Oceania,2,Western & Northern Europe,1561,2046,0.134460771
+Oceania,3,Western & Northern Europe,2286,3173,0.162483971
+Oceania,4,Western & Northern Europe,3079,3457,0.057833537
+Oceania,5,Western & Northern Europe,2877,2686,-0.034333992
+South Asia,1,CA,34,14,-0.416666667
+South Asia,2,CA,273,80,-0.54674221
+South Asia,3,CA,585,192,-0.505791506
+South Asia,4,CA,1005,286,-0.55693261
+South Asia,5,CA,1730,293,-0.710331191
+South Asia,1,Central Asia & Eastern Europe,5,5,0
+South Asia,2,Central Asia & Eastern Europe,24,41,0.261538462
+South Asia,3,Central Asia & Eastern Europe,121,63,-0.315217391
+South Asia,4,Central Asia & Eastern Europe,376,110,-0.547325103
+South Asia,5,Central Asia & Eastern Europe,1029,449,-0.392422192
+South Asia,1,Eastern Asia,131,84,-0.218604651
+South Asia,2,Eastern Asia,813,387,-0.355
+South Asia,3,Eastern Asia,1634,975,-0.252587198
+South Asia,4,Eastern Asia,3881,1768,-0.374048504
+South Asia,5,Eastern Asia,5281,2581,-0.343424065
+South Asia,1,Latin America & Caribbean,2,8,0.6
+South Asia,2,Latin America & Caribbean,38,16,-0.407407407
+South Asia,3,Latin America & Caribbean,105,37,-0.478873239
+South Asia,4,Latin America & Caribbean,258,91,-0.478510029
+South Asia,5,Latin America & Caribbean,321,294,-0.043902439
+South Asia,1,Middle East & North Africa,36,10,-0.565217391
+South Asia,2,Middle East & North Africa,181,51,-0.560344828
+South Asia,3,Middle East & North Africa,792,122,-0.733041575
+South Asia,4,Middle East & North Africa,1682,340,-0.663699308
+South Asia,5,Middle East & North Africa,2693,765,-0.557547715
+South Asia,1,Oceania,25,12,-0.351351351
+South Asia,2,Oceania,240,75,-0.523809524
+South Asia,3,Oceania,651,204,-0.522807018
+South Asia,4,Oceania,1274,404,-0.518474374
+South Asia,5,Oceania,1923,496,-0.589913187
+South Asia,1,South Asia,25,25,0
+South Asia,2,South Asia,92,92,0
+South Asia,3,South Asia,238,238,0
+South Asia,4,South Asia,515,515,0
+South Asia,5,South Asia,963,963,0
+South Asia,1,South-eastern Asia,25,12,-0.351351351
+South Asia,2,South-eastern Asia,202,90,-0.383561644
+South Asia,3,South-eastern Asia,745,299,-0.427203065
+South Asia,4,South-eastern Asia,1240,928,-0.143911439
+South Asia,5,South-eastern Asia,1775,1775,0
+South Asia,1,Southern Europe,19,5,-0.583333333
+South Asia,2,Southern Europe,153,60,-0.436619718
+South Asia,3,Southern Europe,361,115,-0.516806723
+South Asia,4,Southern Europe,451,267,-0.256267409
+South Asia,5,Southern Europe,1021,268,-0.584173778
+South Asia,1,Sub-Saharan Africa,8,3,-0.454545455
+South Asia,2,Sub-Saharan Africa,57,23,-0.425
+South Asia,3,Sub-Saharan Africa,212,64,-0.536231884
+South Asia,4,Sub-Saharan Africa,518,160,-0.528023599
+South Asia,5,Sub-Saharan Africa,696,449,-0.215720524
+South Asia,1,US,462,161,-0.483146067
+South Asia,2,US,2552,840,-0.504716981
+South Asia,3,US,4408,1972,-0.381818182
+South Asia,4,US,7650,2648,-0.485725384
+South Asia,5,US,14144,2664,-0.683008091
+South Asia,1,Western & Northern Europe,225,86,-0.446945338
+South Asia,2,Western & Northern Europe,1253,508,-0.423055082
+South Asia,3,Western & Northern Europe,2538,1351,-0.305219851
+South Asia,4,Western & Northern Europe,4035,1913,-0.356758574
+South Asia,5,Western & Northern Europe,7746,1611,-0.655658865
+South-eastern Asia,1,CA,31,10,-0.512195122
+South-eastern Asia,2,CA,116,84,-0.16
+South-eastern Asia,3,CA,171,128,-0.143812709
+South-eastern Asia,4,CA,252,176,-0.177570093
+South-eastern Asia,5,CA,341,133,-0.438818565
+South-eastern Asia,1,Central Asia & Eastern Europe,1,1,0
+South-eastern Asia,2,Central Asia & Eastern Europe,18,31,0.265306122
+South-eastern Asia,3,Central Asia & Eastern Europe,87,110,0.116751269
+South-eastern Asia,4,Central Asia & Eastern Europe,265,240,-0.04950495
+South-eastern Asia,5,Central Asia & Eastern Europe,594,501,-0.084931507
+South-eastern Asia,1,Eastern Asia,119,209,0.274390244
+South-eastern Asia,2,Eastern Asia,719,1005,0.165893271
+South-eastern Asia,3,Eastern Asia,1323,2678,0.338665334
+South-eastern Asia,4,Eastern Asia,2827,4255,0.201637955
+South-eastern Asia,5,Eastern Asia,4315,5531,0.12350193
+South-eastern Asia,2,Latin America & Caribbean,10,3,-0.538461538
+South-eastern Asia,3,Latin America & Caribbean,22,19,-0.073170732
+South-eastern Asia,4,Latin America & Caribbean,52,68,0.133333333
+South-eastern Asia,5,Latin America & Caribbean,119,108,-0.04845815
+South-eastern Asia,1,Middle East & North Africa,9,4,-0.384615385
+South-eastern Asia,2,Middle East & North Africa,69,71,0.014285714
+South-eastern Asia,3,Middle East & North Africa,595,348,-0.261930011
+South-eastern Asia,4,Middle East & North Africa,1421,406,-0.555555556
+South-eastern Asia,5,Middle East & North Africa,1634,877,-0.301473517
+South-eastern Asia,1,Oceania,52,52,0
+South-eastern Asia,2,Oceania,289,331,0.067741935
+South-eastern Asia,3,Oceania,660,810,0.102040816
+South-eastern Asia,4,Oceania,1140,1240,0.042016807
+South-eastern Asia,5,Oceania,1327,1012,-0.134672937
+South-eastern Asia,1,South Asia,12,25,0.351351351
+South-eastern Asia,2,South Asia,90,202,0.383561644
+South-eastern Asia,3,South Asia,299,745,0.427203065
+South-eastern Asia,4,South Asia,928,1240,0.143911439
+South-eastern Asia,5,South Asia,1775,1775,0
+South-eastern Asia,1,South-eastern Asia,13,13,0
+South-eastern Asia,2,South-eastern Asia,172,172,0
+South-eastern Asia,3,South-eastern Asia,511,511,0
+South-eastern Asia,4,South-eastern Asia,1162,1162,0
+South-eastern Asia,5,South-eastern Asia,2140,2140,0
+South-eastern Asia,1,Southern Europe,5,5,0
+South-eastern Asia,2,Southern Europe,19,35,0.296296296
+South-eastern Asia,3,Southern Europe,73,94,0.125748503
+South-eastern Asia,4,Southern Europe,134,203,0.204747774
+South-eastern Asia,5,Southern Europe,199,196,-0.007594937
+South-eastern Asia,1,Sub-Saharan Africa,3,2,-0.2
+South-eastern Asia,2,Sub-Saharan Africa,24,21,-0.066666667
+South-eastern Asia,3,Sub-Saharan Africa,78,54,-0.181818182
+South-eastern Asia,4,Sub-Saharan Africa,363,170,-0.362101313
+South-eastern Asia,5,Sub-Saharan Africa,544,296,-0.295238095
+South-eastern Asia,1,US,193,237,0.102325581
+South-eastern Asia,2,US,791,976,0.104697227
+South-eastern Asia,3,US,1146,1668,0.185501066
+South-eastern Asia,4,US,1549,1840,0.085866037
+South-eastern Asia,5,US,1875,1484,-0.116403692
+South-eastern Asia,1,Western & Northern Europe,138,222,0.233333333
+South-eastern Asia,2,Western & Northern Europe,633,939,0.194656489
+South-eastern Asia,3,Western & Northern Europe,1261,2137,0.257798705
+South-eastern Asia,4,Western & Northern Europe,2084,2775,0.142210331
+South-eastern Asia,5,Western & Northern Europe,2867,2359,-0.097206276
+Southern Europe,1,CA,63,40,-0.223300971
+Southern Europe,2,CA,278,142,-0.323809524
+Southern Europe,3,CA,450,194,-0.397515528
+Southern Europe,4,CA,635,194,-0.531966224
+Southern Europe,5,CA,575,236,-0.418002466
+Southern Europe,1,Central Asia & Eastern Europe,68,107,0.222857143
+Southern Europe,2,Central Asia & Eastern Europe,321,452,0.169469599
+Southern Europe,3,Central Asia & Eastern Europe,599,634,0.02838605
+Southern Europe,4,Central Asia & Eastern Europe,972,795,-0.100169779
+Southern Europe,5,Central Asia & Eastern Europe,1169,1409,0.093095423
+Southern Europe,1,Eastern Asia,40,40,0
+Southern Europe,2,Eastern Asia,206,221,0.035128806
+Southern Europe,3,Eastern Asia,309,392,0.118402282
+Southern Europe,4,Eastern Asia,542,543,0.000921659
+Southern Europe,5,Eastern Asia,551,900,0.240523777
+Southern Europe,1,Latin America & Caribbean,157,165,0.02484472
+Southern Europe,2,Latin America & Caribbean,635,870,0.156146179
+Southern Europe,3,Latin America & Caribbean,1529,1531,0.000653595
+Southern Europe,4,Latin America & Caribbean,2829,2303,-0.102494154
+Southern Europe,5,Latin America & Caribbean,2344,3813,0.238590223
+Southern Europe,1,Middle East & North Africa,24,34,0.172413793
+Southern Europe,2,Middle East & North Africa,103,148,0.179282869
+Southern Europe,3,Middle East & North Africa,373,340,-0.04628331
+Southern Europe,4,Middle East & North Africa,699,614,-0.064737243
+Southern Europe,5,Middle East & North Africa,826,1467,0.279546446
+Southern Europe,1,Oceania,20,13,-0.212121212
+Southern Europe,2,Oceania,155,67,-0.396396396
+Southern Europe,3,Oceania,346,115,-0.501084599
+Southern Europe,4,Oceania,484,137,-0.558776167
+Southern Europe,5,Oceania,309,144,-0.364238411
+Southern Europe,1,South Asia,5,19,0.583333333
+Southern Europe,2,South Asia,60,153,0.436619718
+Southern Europe,3,South Asia,115,361,0.516806723
+Southern Europe,4,South Asia,267,451,0.256267409
+Southern Europe,5,South Asia,268,1021,0.584173778
+Southern Europe,1,South-eastern Asia,5,5,0
+Southern Europe,2,South-eastern Asia,35,19,-0.296296296
+Southern Europe,3,South-eastern Asia,94,73,-0.125748503
+Southern Europe,4,South-eastern Asia,203,134,-0.204747774
+Southern Europe,5,South-eastern Asia,196,199,0.007594937
+Southern Europe,1,Southern Europe,213,213,0
+Southern Europe,2,Southern Europe,958,958,0
+Southern Europe,3,Southern Europe,1846,1846,0
+Southern Europe,4,Southern Europe,2553,2553,0
+Southern Europe,5,Southern Europe,2926,2926,0
+Southern Europe,1,Sub-Saharan Africa,15,10,-0.2
+Southern Europe,2,Sub-Saharan Africa,32,35,0.044776119
+Southern Europe,3,Sub-Saharan Africa,97,73,-0.141176471
+Southern Europe,4,Sub-Saharan Africa,196,118,-0.248407643
+Southern Europe,5,Sub-Saharan Africa,189,261,0.16
+Southern Europe,1,US,783,377,-0.35
+Southern Europe,2,US,3094,1332,-0.398102124
+Southern Europe,3,US,4328,1642,-0.449916248
+Southern Europe,4,US,4853,1436,-0.543329623
+Southern Europe,5,US,3860,1430,-0.459357278
+Southern Europe,1,Western & Northern Europe,1242,853,-0.185680191
+Southern Europe,2,Western & Northern Europe,5458,3206,-0.259926131
+Southern Europe,3,Western & Northern Europe,10771,4555,-0.40558528
+Southern Europe,4,Western & Northern Europe,15769,5130,-0.509067419
+Southern Europe,5,Western & Northern Europe,14420,6229,-0.396677805
+Sub-Saharan Africa,1,CA,11,8,-0.157894737
+Sub-Saharan Africa,2,CA,67,39,-0.264150943
+Sub-Saharan Africa,3,CA,114,98,-0.075471698
+Sub-Saharan Africa,4,CA,232,153,-0.205194805
+Sub-Saharan Africa,5,CA,518,158,-0.532544379
+Sub-Saharan Africa,1,Central Asia & Eastern Europe,4,7,0.272727273
+Sub-Saharan Africa,2,Central Asia & Eastern Europe,16,28,0.272727273
+Sub-Saharan Africa,3,Central Asia & Eastern Europe,31,82,0.451327434
+Sub-Saharan Africa,4,Central Asia & Eastern Europe,116,248,0.362637363
+Sub-Saharan Africa,5,Central Asia & Eastern Europe,539,637,0.083333333
+Sub-Saharan Africa,1,Eastern Asia,17,16,-0.03030303
+Sub-Saharan Africa,2,Eastern Asia,45,81,0.285714286
+Sub-Saharan Africa,3,Eastern Asia,107,206,0.31629393
+Sub-Saharan Africa,4,Eastern Asia,394,520,0.13785558
+Sub-Saharan Africa,5,Eastern Asia,812,1204,0.194444444
+Sub-Saharan Africa,1,Latin America & Caribbean,4,2,-0.333333333
+Sub-Saharan Africa,2,Latin America & Caribbean,19,29,0.208333333
+Sub-Saharan Africa,3,Latin America & Caribbean,40,67,0.252336449
+Sub-Saharan Africa,4,Latin America & Caribbean,74,118,0.229166667
+Sub-Saharan Africa,5,Latin America & Caribbean,172,228,0.14
+Sub-Saharan Africa,1,Middle East & North Africa,8,3,-0.454545455
+Sub-Saharan Africa,2,Middle East & North Africa,28,39,0.164179104
+Sub-Saharan Africa,3,Middle East & North Africa,97,95,-0.010416667
+Sub-Saharan Africa,4,Middle East & North Africa,206,237,0.069977427
+Sub-Saharan Africa,5,Middle East & North Africa,485,427,-0.063596491
+Sub-Saharan Africa,1,Oceania,17,7,-0.416666667
+Sub-Saharan Africa,2,Oceania,63,39,-0.235294118
+Sub-Saharan Africa,3,Oceania,131,76,-0.265700483
+Sub-Saharan Africa,4,Oceania,339,130,-0.445628998
+Sub-Saharan Africa,5,Oceania,460,146,-0.518151815
+Sub-Saharan Africa,1,South Asia,3,8,0.454545455
+Sub-Saharan Africa,2,South Asia,23,57,0.425
+Sub-Saharan Africa,3,South Asia,64,212,0.536231884
+Sub-Saharan Africa,4,South Asia,160,518,0.528023599
+Sub-Saharan Africa,5,South Asia,449,696,0.215720524
+Sub-Saharan Africa,1,South-eastern Asia,2,3,0.2
+Sub-Saharan Africa,2,South-eastern Asia,21,24,0.066666667
+Sub-Saharan Africa,3,South-eastern Asia,54,78,0.181818182
+Sub-Saharan Africa,4,South-eastern Asia,170,363,0.362101313
+Sub-Saharan Africa,5,South-eastern Asia,296,544,0.295238095
+Sub-Saharan Africa,1,Southern Europe,10,15,0.2
+Sub-Saharan Africa,2,Southern Europe,35,32,-0.044776119
+Sub-Saharan Africa,3,Southern Europe,73,97,0.141176471
+Sub-Saharan Africa,4,Southern Europe,118,196,0.248407643
+Sub-Saharan Africa,5,Southern Europe,261,189,-0.16
+Sub-Saharan Africa,1,Sub-Saharan Africa,51,51,0
+Sub-Saharan Africa,2,Sub-Saharan Africa,281,281,0
+Sub-Saharan Africa,3,Sub-Saharan Africa,761,761,0
+Sub-Saharan Africa,4,Sub-Saharan Africa,1788,1788,0
+Sub-Saharan Africa,5,Sub-Saharan Africa,3329,3329,0
+Sub-Saharan Africa,1,US,90,65,-0.161290323
+Sub-Saharan Africa,2,US,316,267,-0.084048027
+Sub-Saharan Africa,3,US,609,578,-0.026116259
+Sub-Saharan Africa,4,US,1015,871,-0.076352068
+Sub-Saharan Africa,5,US,2574,995,-0.442420846
+Sub-Saharan Africa,1,Western & Northern Europe,199,141,-0.170588235
+Sub-Saharan Africa,2,Western & Northern Europe,608,658,0.039494471
+Sub-Saharan Africa,3,Western & Northern Europe,1009,1210,0.090581343
+Sub-Saharan Africa,4,Western & Northern Europe,1606,1873,0.076746191
+Sub-Saharan Africa,5,Western & Northern Europe,3251,1912,-0.259345342
+US,1,CA,636,815,0.123363198
+US,2,CA,2474,2986,0.093772894
+US,3,CA,3216,4441,0.159984328
+US,4,CA,3528,5475,0.216261246
+US,5,CA,3548,4926,0.162615058
+US,1,Central Asia & Eastern Europe,350,667,0.311701082
+US,2,Central Asia & Eastern Europe,1045,2080,0.3312
+US,3,Central Asia & Eastern Europe,1434,2322,0.236421725
+US,4,Central Asia & Eastern Europe,1643,3067,0.302335456
+US,5,Central Asia & Eastern Europe,1399,3509,0.42991035
+US,1,Eastern Asia,1247,1834,0.190522558
+US,2,Eastern Asia,4783,9628,0.336201513
+US,3,Eastern Asia,7995,15710,0.325458764
+US,4,Eastern Asia,8814,21122,0.411143773
+US,5,Eastern Asia,8355,19102,0.391412026
+US,1,Latin America & Caribbean,316,527,0.25029656
+US,2,Latin America & Caribbean,1152,2101,0.29173071
+US,3,Latin America & Caribbean,1873,3315,0.277949113
+US,4,Latin America & Caribbean,2304,5108,0.378305451
+US,5,Latin America & Caribbean,1885,7106,0.580691803
+US,1,Middle East & North Africa,273,367,0.146875
+US,2,Middle East & North Africa,1118,1775,0.227099896
+US,3,Middle East & North Africa,2212,3649,0.245180003
+US,4,Middle East & North Africa,3081,5919,0.315333333
+US,5,Middle East & North Africa,3653,7828,0.363644282
+US,1,Oceania,208,339,0.239488117
+US,2,Oceania,882,953,0.038692098
+US,3,Oceania,1532,1369,-0.056187522
+US,4,Oceania,1591,1802,0.062186855
+US,5,Oceania,1310,1544,0.081990189
+US,1,South Asia,161,462,0.483146067
+US,2,South Asia,840,2552,0.504716981
+US,3,South Asia,1972,4408,0.381818182
+US,4,South Asia,2648,7650,0.485725384
+US,5,South Asia,2664,14144,0.683008091
+US,1,South-eastern Asia,237,193,-0.102325581
+US,2,South-eastern Asia,976,791,-0.104697227
+US,3,South-eastern Asia,1668,1146,-0.185501066
+US,4,South-eastern Asia,1840,1549,-0.085866037
+US,5,South-eastern Asia,1484,1875,0.116403692
+US,1,Southern Europe,377,783,0.35
+US,2,Southern Europe,1332,3094,0.398102124
+US,3,Southern Europe,1642,4328,0.449916248
+US,4,Southern Europe,1436,4853,0.543329623
+US,5,Southern Europe,1430,3860,0.459357278
+US,1,Sub-Saharan Africa,65,90,0.161290323
+US,2,Sub-Saharan Africa,267,316,0.084048027
+US,3,Sub-Saharan Africa,578,609,0.026116259
+US,4,Sub-Saharan Africa,871,1015,0.076352068
+US,5,Sub-Saharan Africa,995,2574,0.442420846
+US,1,Western & Northern Europe,2036,3107,0.208244215
+US,2,Western & Northern Europe,6738,10406,0.213952403
+US,3,Western & Northern Europe,9684,13693,0.171493348
+US,4,Western & Northern Europe,10571,15051,0.174849739
+US,5,Western & Northern Europe,10567,13190,0.110409563
+Western & Northern Europe,1,CA,534,309,-0.266903915
+Western & Northern Europe,2,CA,2248,1313,-0.262566695
+Western & Northern Europe,3,CA,3193,2189,-0.186547752
+Western & Northern Europe,4,CA,3515,2670,-0.136620857
+Western & Northern Europe,5,CA,3248,2745,-0.083931253
+Western & Northern Europe,1,Central Asia & Eastern Europe,485,858,0.277736411
+Western & Northern Europe,2,Central Asia & Eastern Europe,1456,2793,0.314662273
+Western & Northern Europe,3,Central Asia & Eastern Europe,2076,4087,0.326302126
+Western & Northern Europe,4,Central Asia & Eastern Europe,2759,5402,0.32385737
+Western & Northern Europe,5,Central Asia & Eastern Europe,2755,7618,0.468813265
+Western & Northern Europe,1,Eastern Asia,435,612,0.169054441
+Western & Northern Europe,2,Eastern Asia,1884,2864,0.206402696
+Western & Northern Europe,3,Eastern Asia,3068,5570,0.289650382
+Western & Northern Europe,4,Eastern Asia,4705,8727,0.299434187
+Western & Northern Europe,5,Eastern Asia,5600,11670,0.351476549
+Western & Northern Europe,1,Latin America & Caribbean,248,317,0.122123894
+Western & Northern Europe,2,Latin America & Caribbean,1007,1490,0.193432119
+Western & Northern Europe,3,Latin America & Caribbean,1505,2516,0.251429993
+Western & Northern Europe,4,Latin America & Caribbean,2111,4463,0.357773045
+Western & Northern Europe,5,Latin America & Caribbean,1688,6369,0.580985478
+Western & Northern Europe,1,Middle East & North Africa,328,240,-0.154929577
+Western & Northern Europe,2,Middle East & North Africa,1470,1298,-0.062138728
+Western & Northern Europe,3,Middle East & North Africa,3464,2855,-0.096376009
+Western & Northern Europe,4,Middle East & North Africa,5002,4453,-0.058064516
+Western & Northern Europe,5,Middle East & North Africa,5024,7808,0.216957606
+Western & Northern Europe,1,Oceania,441,396,-0.053763441
+Western & Northern Europe,2,Oceania,2046,1561,-0.134460771
+Western & Northern Europe,3,Oceania,3173,2286,-0.162483971
+Western & Northern Europe,4,Oceania,3457,3079,-0.057833537
+Western & Northern Europe,5,Oceania,2686,2877,0.034333992
+Western & Northern Europe,1,South Asia,86,225,0.446945338
+Western & Northern Europe,2,South Asia,508,1253,0.423055082
+Western & Northern Europe,3,South Asia,1351,2538,0.305219851
+Western & Northern Europe,4,South Asia,1913,4035,0.356758574
+Western & Northern Europe,5,South Asia,1611,7746,0.655658865
+Western & Northern Europe,1,South-eastern Asia,222,138,-0.233333333
+Western & Northern Europe,2,South-eastern Asia,939,633,-0.194656489
+Western & Northern Europe,3,South-eastern Asia,2137,1261,-0.257798705
+Western & Northern Europe,4,South-eastern Asia,2775,2084,-0.142210331
+Western & Northern Europe,5,South-eastern Asia,2359,2867,0.097206276
+Western & Northern Europe,1,Southern Europe,853,1242,0.185680191
+Western & Northern Europe,2,Southern Europe,3206,5458,0.259926131
+Western & Northern Europe,3,Southern Europe,4555,10771,0.40558528
+Western & Northern Europe,4,Southern Europe,5130,15769,0.509067419
+Western & Northern Europe,5,Southern Europe,6229,14420,0.396677805
+Western & Northern Europe,1,Sub-Saharan Africa,141,199,0.170588235
+Western & Northern Europe,2,Sub-Saharan Africa,658,608,-0.039494471
+Western & Northern Europe,3,Sub-Saharan Africa,1210,1009,-0.090581343
+Western & Northern Europe,4,Sub-Saharan Africa,1873,1606,-0.076746191
+Western & Northern Europe,5,Sub-Saharan Africa,1912,3251,0.259345342
+Western & Northern Europe,1,US,3107,2036,-0.208244215
+Western & Northern Europe,2,US,10406,6738,-0.213952403
+Western & Northern Europe,3,US,13693,9684,-0.171493348
+Western & Northern Europe,4,US,15051,10571,-0.174849739
+Western & Northern Europe,5,US,13190,10567,-0.110409563
+Western & Northern Europe,1,Western & Northern Europe,3991,3991,0
+Western & Northern Europe,2,Western & Northern Europe,16926,16926,0
+Western & Northern Europe,3,Western & Northern Europe,25662,25662,0
+Western & Northern Europe,4,Western & Northern Europe,32144,32144,0
+Western & Northern Europe,5,Western & Northern Europe,34217,34217,0

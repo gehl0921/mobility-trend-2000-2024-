@@ -1,0 +1,61 @@
+region_origin,period_first_mobility,type,n_outgoing,n_incoming,gain_index_stand
+CA,1,Overall,1468,1807,0.10351145
+CA,2,Overall,5883,7810,0.14072884
+CA,3,Overall,9710,11902,0.101425134
+CA,4,Overall,12007,15050,0.112466275
+CA,5,Overall,11458,18143,0.225836965
+Central Asia & Eastern Europe,1,Overall,2086,1224,-0.260422961
+Central Asia & Eastern Europe,2,Overall,6828,3991,-0.262223865
+Central Asia & Eastern Europe,3,Overall,9450,6354,-0.195899772
+Central Asia & Eastern Europe,4,Overall,14038,10049,-0.165608004
+Central Asia & Eastern Europe,5,Overall,20853,14164,-0.191021504
+Eastern Asia,1,Overall,3873,2974,-0.131298379
+Eastern Asia,2,Overall,19008,12426,-0.209391105
+Eastern Asia,3,Overall,33396,20517,-0.23888487
+Eastern Asia,4,Overall,47975,29591,-0.237011062
+Eastern Asia,5,Overall,53246,35470,-0.200369719
+Latin America & Caribbean,1,Overall,1291,981,-0.136443662
+Latin America & Caribbean,2,Overall,5664,3741,-0.20446571
+Latin America & Caribbean,3,Overall,9771,6804,-0.179004525
+Latin America & Caribbean,4,Overall,17108,11509,-0.195652934
+Latin America & Caribbean,5,Overall,25792,12223,-0.356938051
+Middle East & North Africa,1,Overall,887,893,0.003370787
+Middle East & North Africa,2,Overall,4763,4190,-0.064000894
+Middle East & North Africa,3,Overall,11201,10875,-0.014767168
+Middle East & North Africa,4,Overall,18613,17564,-0.028996324
+Middle East & North Africa,5,Overall,30845,22617,-0.153903707
+Oceania,1,Overall,1094,1069,-0.011558021
+Oceania,2,Overall,4224,5331,0.115855573
+Oceania,3,Overall,7011,9875,0.169607959
+Oceania,4,Overall,10050,13830,0.158291457
+Oceania,5,Overall,9784,13668,0.165614873
+South Asia,1,Overall,997,425,-0.402250352
+South Asia,2,Overall,5878,2263,-0.444048643
+South Asia,3,Overall,12390,5632,-0.374986128
+South Asia,4,Overall,22885,9430,-0.416370107
+South Asia,5,Overall,39322,12608,-0.514423262
+South-eastern Asia,1,Overall,578,780,0.148748159
+South-eastern Asia,2,Overall,2950,3870,0.134897361
+South-eastern Asia,3,Overall,6226,9302,0.198093766
+South-eastern Asia,4,Overall,12177,13775,0.061575216
+South-eastern Asia,5,Overall,17730,16412,-0.03860348
+Southern Europe,1,Overall,2635,1876,-0.168255376
+Southern Europe,2,Overall,11335,7603,-0.197064104
+Southern Europe,3,Overall,20857,11756,-0.279060497
+Southern Europe,4,Overall,30002,14408,-0.351137131
+Southern Europe,5,Overall,27633,20035,-0.159394143
+Sub-Saharan Africa,1,Overall,416,326,-0.121293801
+Sub-Saharan Africa,2,Overall,1522,1574,0.016795866
+Sub-Saharan Africa,3,Overall,3090,3560,0.070676692
+Sub-Saharan Africa,4,Overall,6218,7015,0.060228217
+Sub-Saharan Africa,5,Overall,13146,10465,-0.11354877
+US,1,Overall,5906,9184,0.217229954
+US,2,Overall,21607,36682,0.258625127
+US,3,Overall,33806,54990,0.238569305
+US,4,Overall,38327,72611,0.30903748
+US,5,Overall,37290,79658,0.362280672
+Western & Northern Europe,1,Overall,10871,10563,-0.014369693
+Western & Northern Europe,2,Overall,42754,42935,0.00211229
+Western & Northern Europe,3,Overall,65087,70428,0.039412611
+Western & Northern Europe,4,Overall,80435,95003,0.083037882
+Western & Northern Europe,5,Overall,80519,112155,0.164194442
