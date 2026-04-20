@@ -1,0 +1,1534 @@
+---
+title: "1a--mobility trend"
+author: "Huilin Ge"
+date: "2025-11-04"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library("plotly")
+library("ggplot2")
+library("scales")
+library("tidyverse")
+library("ggpmisc")
+library("magrittr")
+library("dplyr")
+library("ggh4x")
+library("rlang")
+library("grid")
+library("gridExtra")
+library("viridis")
+library("patchwork")
+
+library("circlize")
+library("alluvial")
+library("ggalluvial")
+library("readxl")
+library("RColorBrewer")
+library("cowplot")
+library("ggrepel")
+library("maps")
+library("scales")
+
+library("circlize")
+library("grid")
+library("dplyr")
+
+library("ineq")
+library("geosphere")
+
+library("ggalluvial")
+library("scales")
+library("stringr")
+library("purrr")
+
+library("reshape2")
+library(dplyr)
+library(tidyr)
+library(igraph)
+
+library(purrr)
+library(scales)
+library(stringr)
+library(patchwork)
+library(grid)
+
+library("forcats")
+
+library("ggh4x")
+
+
+
+
+
+```
+
+
+```{r}
+# number of researchers
+n_researcher_first_year_all<-read.csv("n of researchers--first year--all.csv",header=T,sep=',',stringsAsFactors = FALSE,na.strings = "")
+
+
+base_year <- 2000
+
+nr_first_year_all_index <- n_researcher_first_year_all %>%
+  mutate(
+    n_researchers_index = n_researchers / n_researchers[first_year == base_year],
+  )
+
+nr_first_year_all_growth <- n_researcher_first_year_all %>%
+  arrange(first_year) %>%
+  mutate(
+    n_researchers_yoy = (n_researchers / lag(n_researchers) - 1) ,  )
+
+```
+
+
+
+```{r}
+#figure 2
+
+png(file="Fig 2--n of researchers--first year--all.png", width=1800,height=1200)
+
+k <- 200000
+
+ggplot() +
+  geom_bar(
+    data = n_researcher_first_year_all,
+    aes(x = first_year, y = n_researchers, fill = "First-appearing researchers"),
+    stat = "identity",
+    linewidth = 0.8
+  ) +
+  geom_point(
+    data = nr_first_year_all_index,
+    aes(x = first_year, y = n_researchers_index * k,
+        color = "Index (2000 = 1)",
+        shape = "Index (2000 = 1)"),
+    size = 8
+  ) +
+  scale_y_continuous(
+    limits = c(0, 1700000),
+    expand = c(0, 0),
+    breaks = seq(0, 1600000, 200000),
+    name = "Annual number of researchers first appearing in database",
+    sec.axis = sec_axis(
+      ~ . / k,
+      breaks = seq(0, 8, 1),
+      name = "Researcher count for each cohort relative to 2000 (2000 = 1)"
+    )
+  ) +
+  labs(
+    x = "first publication year (cohort)",
+    y = "Number of reseachers"
+  ) +
+  scale_fill_manual(
+    name = NULL,
+    values = c("First-appearing researchers" = "#0072B2")
+  ) +
+  scale_color_manual(
+    name = NULL,
+    values = c("Index (2000 = 1)" = "#C44E52")
+  ) +
+  scale_shape_manual(
+    name = NULL,
+    values = c("Index (2000 = 1)" = 16)
+  ) +
+  theme_bw() +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.border = element_blank(),
+    axis.ticks = element_line(size = 1.5),
+    axis.ticks.length = unit(0.3, "cm"),
+    axis.line = element_line(color = "grey30", size = 1.5),
+    axis.text.x = element_text(size = 35, color = "black"),
+    axis.text.y = element_text(size = 35, margin = margin(0, 10, 0, 10), color = "black"),
+    axis.title.x = element_text(size = 35, margin = margin(t = 10)),
+    axis.title.y = element_text(size = 35, margin = margin(r = 10)),
+    plot.title = element_text(hjust = 0, vjust = 0.5, size = 35, face = "bold"),
+    legend.position = "bottom",
+  legend.title = element_text(size = 30), 
+    legend.text = element_text(size = 30),    
+    legend.key.size = unit(2, "cm") ,
+    strip.text = element_text(size = 30, face = "bold"),
+    strip.background = element_blank()
+  )
+dev.off()
+
+```
+
+
+```{r}
+
+publication_year<-read.csv("n of active researchers and publications--pub  year.csv",header=T,sep=',',stringsAsFactors = FALSE,na.strings = "")
+
+```
+
+```{r}
+#Figure A1
+png(file="Fig 3--publication--year.png", width=3000,height=1500)  
+ggplot(publication_year, aes(x = year, y = n_pub)) +
+  geom_line(size = 4,color="#1f77b4") +  
+  geom_point(size = 8,color="#1f77b4") +   
+  scale_y_continuous(limits= c(0,7000000)
+                     ,breaks=c(0, 1000000,2000000,3000000,4000000,5000000,6000000,7000000)
+                     ,labels=c("0","1000,000","2,000,000","3,000,000","4,000,000","5,000,000","6,000,000","7,000,000"))+
+  scale_x_continuous(limits=c(2000,2024),breaks=seq(2000, 2024,5))+
+  labs(x = "Year",
+       y = "Number of publications") +
+   theme_bw() +
+    theme( 
+    panel.grid.minor = element_blank(),
+    panel.border = element_blank(), 
+    plot.title.position = "plot",  
+    plot.title = element_text(hjust = 0.05, vjust = 0, size = 80, face = "bold", color = "black"),
+    strip.text = element_text(size=50),
+    axis.ticks = element_line(size = 1.5), 
+    axis.ticks.length = unit(0.5, "cm"),
+    axis.line = element_line(size = 1.5), 
+    axis.text = element_text(size = 50),
+    axis.line.y=element_line(size=1.5,color='black'),
+    axis.title = element_text(size = 50),
+    axis.title.x = element_text(size = 50, margin = margin(20, 0, 0, 0)),
+    axis.title.y = element_text(size = 50, margin = margin(0, 20, 0, 0)),
+    legend.text = element_text(size = 50),
+    legend.title = element_blank(),
+    legend.position = c(0.3, 0.95),
+    legend.key.size = unit(1, "cm")
+  )
+dev.off()
+```
+
+
+
+```{r}
+#Figure 3
+n_researcher_first_year_region_origin<-read.csv("n of researchers--first year--region of origin.csv",header=T,sep=',',stringsAsFactors = FALSE,na.strings = "")
+
+base_year <- 2000
+
+nr_first_year_region_origin_index<-n_researcher_first_year_region_origin %>%
+  group_by(region_origin) %>%
+  mutate(
+    n_researchers_index = n_researchers / n_researchers[first_year == base_year],
+  )
+
+max(nr_first_year_region_origin_index$n_researchers_index) #27
+
+```
+
+
+```{r}
+##Figure 4
+png(file="Fig 4--n of researcher--first year--region of origin.png", width=2000,height=1500)
+
+k <- 20000
+ggplot(nr_first_year_region_origin_index, aes(x = first_year)) +
+
+  # Bars: n_researchers (legend via fill only)
+  geom_col(
+    aes(y = n_researchers, fill = "First-appearing researchers"),
+    width = 0.85,
+    alpha = 0.8
+  ) +
+
+  # Points: index * k (legend via color/shape)
+  geom_point(
+    aes(y = n_researchers_index * k, color = "Index (2000 = 1)", shape = "Index (2000 = 1)"),
+    size = 4,
+    stroke = 0.4
+  ) +
+  
+
+  scale_y_continuous(limits= c(0,600000)
+                     ,breaks=c(0, 100000,200000,300000,400000,500000,600000,700000)
+                     ,labels=c("0","100,000","200,000","300,000","400,000","500,000","600,000","700,000"),
+    name = "Annual number of researchers first appearing in database",
+    sec.axis = sec_axis(~ . / k, name = "Researcher count for each cohort relative to 2000 (2000 = 1)")
+  ) +
+  facet_wrap(~ region_origin, ncol = 4) +
+
+  # Use fill for bars, color for points (two scales, but one legend title = NULL)
+  scale_fill_manual(
+    name = NULL,
+    values = c("First-appearing researchers" = "#0072B2")
+  ) +
+  scale_color_manual(
+    name = NULL,
+    values = c("Index (2000 = 1)" = "#C44E52")
+  ) +
+  scale_shape_manual(
+    name = NULL,
+    values = c("Index (2000 = 1)" = 16)  # filled circle
+  ) +
+
+  guides(
+    fill  = guide_legend(override.aes = list(alpha = 0.8)),
+    color = guide_legend(override.aes = list(size = 4)),
+    shape = "none"  # keep one legend entry for the points (via color)
+  ) +
+ labs(x = "first publication year (cohort)", 
+       y = "Number of reseachers") +
+
+  guides(color = guide_legend(ncol = 8))+
+  theme_bw() +
+   theme(
+     panel.grid.minor = element_blank(),
+    panel.border = element_blank(),
+    axis.ticks = element_line(size = 1.5),
+    axis.ticks.length = unit(0.3, "cm"),
+    axis.line = element_line(color = "grey30",size = 1.5),
+    axis.text.x = element_text(size = 25,angle=20,hjust = 0.5, vjust = 1, margin = margin(t = 10) , color = "black"),
+    axis.text.y = element_text(size = 25,margin = margin(0,10,0,10) , color = "black"),
+    axis.title.x = element_text(size = 35, margin = margin(t = 10)),
+    axis.title.y = element_text(size = 35, margin = margin(r = 10)),
+    plot.title = element_text(hjust =0, vjust = 0.5,size = 35, face = "bold"),
+    legend.position = "bottom",  
+    legend.title = element_text(size = 35), 
+    legend.text = element_text(size = 35),    
+    legend.key.size = unit(2, "cm") ,
+    strip.text = element_text(size = 33),
+    strip.background = element_blank()
+  ) 
+
+dev.off()
+
+```
+
+
+
+
+```{r}
+#mobility rate
+mobility_rate_first_year_all<-read.csv("mobility rate based on first_year--all.csv",header=T,sep=',',stringsAsFactors = FALSE,na.strings = "")
+
+mobility_rate_first_year_all$mobility_year<-mobility_rate_first_year_all$first_year+mobility_rate_first_year_all$mobility_window
+
+
+blue_to_green <- colorRampPalette(c("#0043C3", "#A0CF90"))(6)
+
+green_to_yellow <- colorRampPalette(c("#B2DF8A", "#EAE449"))(6)
+
+yellow_to_orange<- colorRampPalette(c( "#F0E442", "#F58C28"))(6) 
+
+orange_to_red <- colorRampPalette(c("#F68225" , "#FD2109"))(3) 
+red_to_black<-colorRampPalette(c("red","#4B0000"))(3)
+
+
+colors <- c(blue_to_green, green_to_yellow, yellow_to_orange,orange_to_red ,red_to_black)
+
+first_year_colors <- setNames(colors, 2000:2023)
+
+```
+
+
+```{r}
+#Figure 5 
+png(file="Fig 5--mobility rate--first year--all.png", width=2000,height=1500)
+
+ggplot(mobility_rate_first_year_all, aes(x = mobility_window, y = prop_research, color = factor(first_year))) +
+  geom_point(size=3) +  
+  scale_y_continuous(limits = c(0, 0.014), breaks = c(0, 0.002, 0.004,0.006,0.008,0.01,0.012,0.014)
+  ) +
+  scale_x_continuous(breaks = c(1, 5,10,15,20,25),expand = expansion(mult = c(0.05, 0.1))) +
+  geom_line(aes(y = prop_research), size = 3) +  
+  scale_color_manual(values = first_year_colors) +   
+  labs(x = "Mobility window", 
+       y = "Proportion of mobile reseachers among\nresearchers with same first pulication year", 
+       color = "First publication cohort") +
+
+  guides(color = guide_legend(ncol = 8))+
+  theme_bw() +
+   theme(
+     panel.grid.minor = element_blank(),
+    panel.border = element_blank(),
+    axis.ticks = element_line(size = 1.5),
+    axis.ticks.length = unit(0.3, "cm"),
+    axis.line = element_line(color = "grey30",size = 1.5),
+    axis.text.x = element_text(size = 35,color = "black"),
+    axis.text.y = element_text(size = 35,margin = margin(0,10,0,10) , color = "black"),
+    axis.title.x = element_text(size = 50, margin = margin(t = 10)),
+    axis.title.y = element_text(size = 50, margin = margin(r = 10)),
+    plot.title = element_text(hjust =0, vjust = 0.5,size = 35, face = "bold"),
+    legend.position = "bottom",  
+    legend.title = element_text(size = 30), 
+    legend.text = element_text(size = 30),    
+    legend.key.size = unit(1.5, "cm") ,
+    strip.text = element_text(size = 30, face = "bold"),
+    strip.background = element_blank()
+  ) 
+dev.off()
+```
+
+
+```{r}
+#mobility rate--region of origin
+mobility_rate_first_year_region_origin<-read.csv("mobility rate based on first_year--region of origin.csv",header=T,sep=',',stringsAsFactors = FALSE,na.strings = "")
+
+
+
+blue_to_green <- colorRampPalette(c("#0043C3", "#A0CF90"))(6)
+
+green_to_yellow <- colorRampPalette(c("#B2DF8A", "#EAE449"))(6)
+
+yellow_to_orange<- colorRampPalette(c( "#F0E442", "#F58C28"))(6) 
+
+orange_to_red <- colorRampPalette(c("#F68225" , "#FD2109"))(3) 
+red_to_black<-colorRampPalette(c("red","#4B0000"))(3)
+
+
+colors <- c(blue_to_green, green_to_yellow, yellow_to_orange,orange_to_red ,red_to_black)
+
+first_year_colors <- setNames(colors, 2000:2023)
+
+#"#0000FF" "#0016EB" "#002DD7" "#0043C3" "#005AAF" "#00709B" "#008787" "#009E73" "#009E73" "#22A86C" "#44B265" "#66BC5E" "#89C657" "#ABD050" "#CDDA49" "#F0E442" "#F0E442" "#F2C338" "#F4A22F" "#F68225" "#F8611C" "#FA4112" "#FC2009" "#FF0000" 
+
+peak_mobility <- mobility_rate_first_year_region_origin %>%
+  group_by(first_year, region_origin) %>%
+  slice_max(prop_research, n = 1, with_ties = FALSE) %>%
+  ungroup()
+```
+
+```{r}
+#Figure 5
+png(file="Fig 6--mobility rate--first year--region of origin.png", width=2000,height=1500)
+
+ggplot(mobility_rate_first_year_region_origin, aes(x = mobility_window, y = prop_research, color = factor(first_year))) +
+  geom_point(size=3) +  
+  scale_y_continuous(limits = c(0, 0.030), breaks = seq(0, 0.030, 0.005) ) +
+  scale_x_continuous(breaks = c(1,5,10,15,20,25),expand = expansion(mult = c(0.05, 0.1))) +
+  geom_line(aes(y = prop_research), size = 2) +  
+  scale_color_manual(values = first_year_colors) +   
+  facet_wrap(~ region_origin, ncol = 4) +
+  labs(x = "Mobility window", 
+       y = "Proportion of mobile reseachers among\nresearchers with same first pulication cohort", 
+       color = "First publication cohort") +
+
+  guides(color = guide_legend(ncol = 8))+
+  theme_bw() +
+   theme(
+     panel.grid.minor = element_blank(),
+    panel.border = element_blank(),
+    axis.ticks = element_line(size = 1.5),
+    axis.ticks.length = unit(0.3, "cm"),
+    axis.line = element_line(color = "grey30",size = 1.5),
+    axis.text.x = element_text(size = 35, color = "black"),
+    axis.text.y = element_text(size = 35,margin = margin(0,10,0,10) , color = "black"),
+    axis.title.x = element_text(size = 50, margin = margin(t = 10)),
+    axis.title.y = element_text(size = 50, margin = margin(r = 10)),
+    plot.title = element_text(hjust =0, vjust = 0.5,size = 35, face = "bold"),
+    legend.position = "bottom",  
+    legend.title = element_text(size = 30), 
+    legend.text = element_text(size = 30),    
+    legend.key.size = unit(1.5, "cm") ,
+    strip.text = element_text(size = 30, face = "bold"),
+     strip.background = element_blank()
+  ) 
+dev.off()
+
+```
+
+
+
+
+```{r}
+flow_orig_dest_region_period<-read.csv("flow--origin region--destination region--period.csv",header=T,sep=',',stringsAsFactors = FALSE,na.strings = "")
+
+flow_orig_dest_region_period <- flow_orig_dest_region_period %>%
+  mutate(
+     period_first_mobility = factor(
+       period_first_mobility,
+      levels = c(1, 2, 3, 4,5),
+      labels = c("2000-2004", "2005-2009", "2010-2014", "2015-2019","2020-2024")
+    ),
+    region_origin = factor(region_origin)
+  )
+
+```
+
+```{r}
+fr_orig_top<-flow_orig_dest_region_period %>% filter (region_origin!=region_destination)
+
+fr_orig_bottom<-flow_orig_dest_region_period %>% filter (region_origin==region_destination)
+
+
+
+fr_orig_top_grouped <- fr_orig_top %>%
+  group_by(region_origin, period_first_mobility) %>%
+  mutate(
+    dest_group = if_else(prop_mobile > 0.0, region_destination, "Other")
+  ) %>%
+  group_by(region_origin, period_first_mobility, dest_group) %>%
+  summarise(
+    n_mobile   = sum(n_mobile, na.rm = TRUE),
+    prop_mobile = sum(prop_mobile, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    side = "Other regions",   # 上半部分
+    y    =  prop_mobile       # 正值：画在 x 轴上方
+  )
+
+fr_orig_bottom_clean <- fr_orig_bottom %>%
+  mutate(
+    dest_group = region_destination,  # 如果列名不同，在这里改
+    side = "Same region",             # 下半部分
+    y    = -prop_mobile               # 取负：画在 x 轴下方
+  )
+
+fr_orig_all <- bind_rows(fr_orig_top_grouped, fr_orig_bottom_clean)
+
+max_prop_orig <- fr_orig_all %>%
+  group_by(region_origin, period_first_mobility, side) %>%
+  summarise(total = sum(abs(y)), .groups = "drop") %>%
+  summarise(max_total_orig = max(total)) %>%
+  pull(max_total_orig)
+
+region_colors <- c(
+  
+  
+  "CA"                                  = "#F0E442",
+  "Central Asia & Eastern Europe"       = "#F3AF32",
+  "Eastern Asia"                        = "#86BCB6" ,
+  "Southern Europe"                     = "#8172B2",
+  "Latin America & Caribbean"           = "#CC79A7",
+  "Middle East & North Africa"          = "#E1D8FF",
+  "Oceania"                             = "#FB9A99",
+  "South Asia"                          = "#0072B2",
+  "South-eastern Asia"                  = "#999999",
+  "Sub-Saharan Africa"                  = "#CCB974",
+  "US"                                  = "#C44E52",
+  "Western & Northern Europe"           = "#B2DF8A",
+  "Other"                               = "#EBFFFD"
+)
+
+```
+
+
+```{r}
+#Figure 6
+png(file="Fig 6--Fig flow_origin region--destination region--000.png", width=2400,height=1800) 
+ggplot(fr_orig_all, aes(x = period_first_mobility, y = y, fill = dest_group)) +
+  geom_col(width = 0.8, color = "black",size = 0.5) +
+  scale_fill_manual(values = region_colors)+
+  facet_wrap(~ region_origin, ncol = 4,
+             labeller = labeller(region_origin = function(x) paste("From: ", x))) +   # 12 个 panel，可调 ncol
+  geom_hline(yintercept = 0, color = "black") +
+  scale_y_continuous(
+    breaks = c(-0.4, -0.2, 0, 0.2, 0.4,0.6,0.8,1),
+    labels = function(x) scales::percent(abs(x))#,  # y 轴显示绝对值百分比
+   # breaks = scales::pretty_breaks(5)
+  ) +
+labs(
+    x   = "First mobility period",
+    y   = "Share of mobile researchers",
+    fill = "To"
+  ) +
+ theme_bw() +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.border = element_blank(),
+    axis.ticks = element_line(size = 1.5),
+    axis.ticks.length = unit(0.3, "cm"),
+    axis.line = element_line(color = "grey30",size = 1.5),
+    axis.text.x = element_text(size = 35,angle=30,hjust = 0.5, vjust = 1, margin = margin(t = 35) , color = "black"),
+    axis.text.y = element_text(size = 35,margin = margin(0,10,0,10) , color = "black"),
+    axis.title.x = element_text(size = 50, margin = margin(t = 10)),
+    axis.title.y = element_text(size = 50, margin = margin(r = 10)),
+    plot.title = element_text(hjust =0, vjust = 0.5,size = 20, face = "bold"),
+    legend.title = element_text(size = 37),
+    legend.text = element_text(size = 37),
+    legend.key.size = unit(1, "cm"),
+    legend.position = "bottom",
+    strip.text = element_text(size = 33),
+    strip.background = element_blank(),
+    strip.placement = "outside",
+    panel.spacing.y = unit(0.8, "cm")
+  )
+
+dev.off()
+
+```
+
+
+```{r}
+fr_dest_top<-flow_dest_origin_region_period %>% filter (region_origin!=region_destination)
+
+fr_dest_bottom<-flow_dest_origin_region_period %>% filter (region_origin==region_destination)
+
+
+
+fr_dest_top_grouped <- fr_dest_top %>%
+  group_by(region_destination, period_first_mobility) %>%
+  mutate(
+    orig_group = if_else(prop_mobile > 0.00, region_origin, "Other")
+  ) %>%
+  group_by(region_destination, period_first_mobility, orig_group) %>%
+  summarise(
+    n_mobile   = sum(n_mobile, na.rm = TRUE),
+    prop_mobile = sum(prop_mobile, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  mutate(
+    side = "Other regions",   # 上半部分
+    y    =  prop_mobile       # 正值：画在 x 轴上方
+  )
+
+fr_dest_bottom_clean <- fr_dest_bottom %>%
+  mutate(
+    orig_group = region_origin,  # 如果列名不同，在这里改
+    side = "Same region",             # 下半部分
+    y    = -prop_mobile               # 取负：画在 x 轴下方
+  )
+
+fr_dest_all <- bind_rows(fr_dest_top_grouped, fr_dest_bottom_clean)
+
+max_prop_dest <- fr_dest_all %>%
+  group_by(region_destination, period_first_mobility, side) %>%
+  summarise(total = sum(abs(y)), .groups = "drop") %>%
+  summarise(max_total_dest = max(total)) %>%
+  pull(max_total_dest)
+
+region_colors <- c(
+  
+  
+  "CA"                                  = "#F0E442",
+  "Central Asia & Eastern Europe"       = "#F3AF32",
+  "Eastern Asia"                        = "#86BCB6" ,
+  "Southern Europe"                     = "#8172B2",
+  "Latin America & Caribbean"           = "#CC79A7",
+  "Middle East & North Africa"          = "#E1D8FF",
+  "Oceania"                             = "#FB9A99",
+  "South Asia"                          = "#0072B2",
+  "South-eastern Asia"                  = "#999999",
+  "Sub-Saharan Africa"                  = "#CCB974",
+  "US"                                  = "#C44E52",
+  "Western & Northern Europe"           = "#B2DF8A",
+  "Other"                               = "#EBFFFD"
+)
+
+```
+
+
+```{r}
+#Figure 7
+png(file="Fig 7--Fig flow_destination region--origin region--000.png", width=2400,height=1800) 
+ggplot(fr_dest_all, aes(x = period_first_mobility, y = y, fill = orig_group)) +
+  geom_col(width = 0.8, color = "black",size = 0.5) +
+  scale_fill_manual(values = region_colors)+
+  facet_wrap(~ region_destination, ncol = 4,
+             labeller = labeller(region_destination = function(x) paste("To: ", x))) +   # 12 个 panel，可调 ncol
+  geom_hline(yintercept = 0, color = "black") +
+  scale_y_continuous(
+    breaks = c(-0.4, -0.2, 0, 0.2, 0.4,0.6,0.8,1),
+    labels = function(x) scales::percent(abs(x))#,  # y 轴显示绝对值百分比
+   # breaks = scales::pretty_breaks(5)
+  ) +
+  
+labs(
+    x   = "First mobility period",
+    y   = "Share of mobile researchers",
+    fill = "Region of origin"
+  ) +
+  theme_bw() +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.border = element_blank(),
+    axis.ticks = element_line(size = 1.5),
+    axis.ticks.length = unit(0.3, "cm"),
+    axis.line = element_line(color = "grey30",size = 1.5),
+    axis.text.x = element_text(size = 35,angle=30,hjust = 0.5, vjust = 1, margin = margin(t = 35) , color = "black"),
+    axis.text.y = element_text(size = 35,margin = margin(0,10,0,10) , color = "black"),
+    axis.title.x = element_text(size = 50, margin = margin(t = 10)),
+    axis.title.y = element_text(size = 50, margin = margin(r = 10)),
+    plot.title = element_text(hjust =0, vjust = 0.5,size = 35, face = "bold"),
+    legend.title = element_text(size = 40),
+    legend.text = element_text(size = 40),
+    legend.key.size = unit(1, "cm"),
+    legend.position = "bottom",
+    strip.text = element_text(size = 33),
+    strip.background = element_blank(),
+    strip.placement = "outside",
+    panel.spacing.y = unit(0.8, "cm")
+  )
+
+dev.off()
+
+```
+
+
+
+
+```{r}
+df_orig_region_entropy <- flow_orig_dest_region_period %>%
+  group_by(region_origin,  period_first_mobility) %>%
+    summarise(entropy = -sum(prop_mobile * log(prop_mobile + 1e-9)), .groups = "drop")
+
+df_orig_region_gini <- flow_orig_dest_region_period %>%
+  group_by(region_origin,  period_first_mobility) %>%
+  summarise(
+    gini  = ineq::Gini(prop_mobile),
+    .groups = "drop" )
+
+df_orig_region_long <- df_orig_region_entropy %>%
+  inner_join(df_orig_region_gini, by = c("region_origin", "period_first_mobility")) %>%
+  pivot_longer(
+    cols = c(entropy, gini),
+    names_to = "Coeffient",
+    values_to = "value"
+  )
+
+
+df_dest_region_entropy <- flow_dest_origin_region_period %>%
+  group_by(region_destination,  period_first_mobility) %>%
+    summarise(entropy = -sum(prop_mobile * log(prop_mobile + 1e-9)), .groups = "drop")
+
+df_dest_region_gini <- flow_dest_origin_region_period %>%
+  group_by(region_destination,  period_first_mobility) %>%
+  summarise(
+    gini  = ineq::Gini(prop_mobile),
+    .groups = "drop" )
+
+df_dest_region_long <- df_dest_region_entropy %>%
+  inner_join(df_dest_region_gini, by = c("region_destination", "period_first_mobility")) %>%
+  pivot_longer(
+    cols = c(entropy, gini),
+    names_to = "Coeffient",
+    values_to = "value"
+  )
+```
+
+```{r}
+#Figure 8
+df_origin<-df_orig_region_long
+df_destination<-df_dest_region_long
+
+df_origin$region <- df_origin$region_origin
+df_destination$region <- df_destination$region_destination
+
+df_origin$mobility_type <- "Origin"
+df_destination$mobility_type <- "Destination"
+
+
+df_all <- rbind(
+  df_origin[, c("region", "period_first_mobility", "Coeffient", "value", "mobility_type")],
+  df_destination[, c("region", "period_first_mobility", "Coeffient", "value", "mobility_type")]
+)
+
+png(file="Fig 8--Fig gini--both--origin region--destination region--period--plus.png", width=2400,height=1800) 
+
+ggplot(df_all,
+  aes(
+    x = period_first_mobility,
+    y = value,
+    group = interaction(mobility_type, Coeffient),
+    linetype = mobility_type,
+    shape = Coeffient
+  )
+) +
+    ## ======================
+  ## Gini & Entropy lines
+  ## ======================
+  ## 背景 0–1（灰色）
+  annotate(
+    "rect",
+    xmin = -Inf, xmax = Inf,
+    ymin = 0, ymax = 1,
+    fill = "#F6D6D6",
+    alpha = 0.6
+  ) +
+
+  ## 背景 1–4（淡黄色）
+  annotate(
+    "rect",
+    xmin = -Inf, xmax = Inf,
+    ymin = 1, ymax = 3,
+    fill = "#FFF2CC",
+    alpha = 0.6
+  ) +
+  geom_line(size = 2) +
+  geom_point(size = 6) +
+  facet_wrap(~ region, scales = "free_y") +
+  scale_linetype_manual(
+    values = c("Origin" = "solid", "Destination" = "dotdash")
+  ) +
+  scale_shape_manual(
+    values = c("gini" = 16, "entropy" = 17)
+  ) +
+  
+  
+  facet_wrap(~ region, ncol = 4) +
+
+  scale_shape_manual(
+    name = "Coeffient",
+    values = c(
+      "gini" = 16,     # ●
+      "entropy" = 17   # 
+    ),
+    labels = c(
+      "gini" = "Gini coefficient",
+      "entropy" = "Entropy"
+    )
+  ) +
+  scale_y_continuous(
+    limits = c(0, 3),breaks = c(0,0.2,0.4,0.6,0.8,1,1.5,2,2.5,3),
+    name = "Gini cofficient and Entropy (destinaiton regions)"#,
+ #   sec.axis = sec_axis(~ . * 2 + 2, name = "Entropy of destinaiton")
+  ) +
+  
+  
+  labs(x   = "First mobility period") +
+  theme_bw() +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.border = element_blank(),
+    axis.ticks = element_line(size = 1.5),
+    axis.ticks.length = unit(0.3, "cm"),
+    axis.line = element_line(color = "grey30",size = 1.5),
+    axis.text.x = element_text(size = 35,angle=30,hjust = 0.5, vjust = 1, margin = margin(t = 35) , color = "black"),
+    axis.text.y = element_text(size = 35,margin = margin(0,10,0,10) , color = "black"),
+    axis.title.x = element_text(size = 50, margin = margin(t = 10)),
+    axis.title.y = element_text(size = 50, margin = margin(r = 10)),
+    plot.title = element_text(hjust =0, vjust = 0.5,size = 35, face = "bold"),
+    legend.title = element_blank(),
+    legend.text = element_text(size = 40),
+    legend.key.size = unit(1.5, "cm"),
+    legend.position = "bottom",
+    strip.text = element_text(size = 38),
+    strip.background = element_blank(),
+    strip.placement = "outside",
+    panel.spacing.y = unit(0.8, "cm")
+  )+ 
+  guides(
+    shape=guide_legend (nrow=1)
+    
+  )
+
+dev.off()
+
+```
+
+
+
+
+
+
+
+
+```{r}
+flow_orig_dest_period<-read.csv("flow--origin region--destination--period.csv",header=T,sep=',',stringsAsFactors = FALSE,na.strings = "")
+
+flow_orig_dest_period <- flow_orig_dest_period %>%
+  mutate(
+     period_first_mobility = factor(
+       period_first_mobility,
+      levels = c(1, 2, 3, 4,5),
+      labels = c("2000-2004", "2005-2009", "2010-2014", "2015-2019","2020-2024")
+    ),
+    region_origin = factor(region_origin)
+  )
+
+```
+
+
+```{r}
+#Figure A2
+df_orig_top3 <- flow_orig_dest_period %>%
+  group_by(region_origin, period_first_mobility) %>%
+  slice_max(order_by = prop_mobile, n = 3, with_ties = FALSE) %>%
+  ungroup()
+
+unique(df_orig_top3$destination)
+
+destination_colors <- c(
+  "BR"                          = "#E1D8FF",
+  "GB"                          = "#56B4E9",
+  "CA"                          = "#F0E442",
+  "IN"                          = "#E8C1A0",
+  "CN"                          = "#0072B2",
+  "DE"                          = "#8172B2",
+  "ES"                          = "#CC79A7",
+  "FR"                          = "#009E73",
+  "AU"                          = "#B2DF8A",
+  "JP"                          = "#FB9A99",
+  "IT"                          = "#999999",
+  "MY"                          = "#CCB974",
+  "IR"                          = "#EBFFFD",
+  "RU"                          = "orange", 
+  "KR"                          = "#55A868", # Muted Green
+  "US"                          = "#C44E52", # Muted Red
+  "ZA"                          = "#86BCB6" #, # Muted Blue
+)
+
+
+# 3) 组合图：左轴=Top3堆积柱，右轴=Gini（两者都在 0-1 范围，可直接共用同一尺度）
+png(file="Fig A2--Fig gini--origin region--destination--period--plus.png", width=2400,height=1800) 
+
+ggplot() +
+## ======================
+  ## stacked bars
+  ## ======================
+  geom_col(
+    data = df_orig_top3,
+    aes(
+      x = period_first_mobility,
+      y = prop_mobile,
+      fill = destination
+    ),
+    width = 0.8,
+    color = "black",
+    size = 0.5
+  ) +
+
+  ## ======================
+  ## Gini & Entropy lines
+  ## ======================
+  geom_line(
+    data = df_orig_long,
+    aes(
+      x = period_first_mobility,
+      y = value_plot,
+      group = Coeffient
+    ),
+    color = "black",
+    linewidth = 2
+  ) +
+
+  geom_point(
+    data = df_orig_long,
+    aes(
+      x = period_first_mobility,
+      y = value_plot,
+      shape = Coeffient
+    ),
+    color = "black",
+    size = 6
+  ) +
+
+  facet_wrap(~ region_origin, ncol = 4) +
+
+  scale_color_manual(
+    name = "Coeffient",
+    values = c(
+      "gini" = 16,     # ●
+      "entropy" = 23   # 
+    ),
+    labels = c(
+      "gini" = "Gini coefficient",
+      "entropy" = "Entropy"
+    )
+  ) +
+
+ scale_fill_manual(values = destination_colors) +
+  
+  scale_y_continuous(
+    limits = c(0, 1),
+    name = "Share of top 3 destination countries and\nGini coefficient (destination countries)",
+    sec.axis = sec_axis(
+      ~ . * 2 + 2,
+      breaks = seq(2, 4, 0.5),
+      name = "Entropy (destination countries)"
+    )
+  ) +
+
+  labs(x   = "First mobility period", fill = "Country of destination",shape= NULL) +
+  theme_bw() +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.border = element_blank(),
+    axis.ticks = element_line(size = 1.5),
+    axis.ticks.length = unit(0.3, "cm"),
+    axis.line = element_line(color = "grey30",size = 1.5),
+    axis.text.x = element_text(size = 35,angle=30,hjust = 0.5, vjust = 1, margin = margin(t = 35) , color = "black"),
+    axis.text.y = element_text(size = 35,margin = margin(0,10,0,10) , color = "black"),
+    axis.title.x = element_text(size = 50, margin = margin(t = 10)),
+    axis.title.y = element_text(size = 50, margin = margin(r = 10)),
+    plot.title = element_text(hjust =0, vjust = 0.5,size = 35, face = "bold"),
+    legend.title = element_text(size = 40),
+    legend.text = element_text(size = 40),
+    legend.key.size = unit(1, "cm"),
+    legend.position = "bottom",
+    strip.text = element_text(size = 38),
+    strip.background = element_blank(),
+    strip.placement = "outside",
+    panel.spacing.y = unit(0.8, "cm")
+  )+ 
+  guides(
+    fill = guide_legend(nrow = 2,order=1),
+    shape=guide_legend (nrow=2,order=2)
+  )
+
+dev.off()
+
+```
+
+
+
+```{r}
+gain_lose_all<-read.csv("brain drain and gain--all.csv", header=T,sep=',',stringsAsFactors = FALSE,na.strings = "NA")
+
+gain_lose_all<- gain_lose_all %>% filter (n_outgoing>=10)
+
+min(gain_lose_all$gain_index_stand)
+max(gain_lose_all$gain_index_stand)
+
+gain_lose_all <- gain_lose_all %>%
+  mutate(
+     period_first_mobility = factor(
+       period_first_mobility,
+      levels = c(1, 2, 3, 4,5),
+      labels = c("2000-2004", "2005-2009", "2010-2014", "2015-2019","2020-2024")
+    ),
+    region_origin = factor(region_origin)
+  )
+
+```
+
+
+```{r}
+#Figure 9
+png(file="Fig 9--Fig brain drain and gain--period-all.png", width=2400,height=1800) 
+ggplot(gain_lose_all, aes(x = factor(period_first_mobility),
+                   y = gain_index_stand,
+                   color = region_origin,
+                   group = region_origin)) +
+  geom_line(
+    linewidth = 3
+  ) +
+
+  geom_point(
+    size = 6
+  ) +
+  scale_x_discrete(expand = c(0.05, 0.05))+
+  scale_y_continuous(limits = c(-0.6,0.4), breaks = seq(-0.6, 0.4, 0.2),
+                     labels = label_number(accuracy = 0.1),
+                     expand = expansion(mult = c(0.05, 0.1)))+
+  scale_color_manual(values = c(
+    
+  "CA"                                  = "#F0E442",
+  "Central Asia & Eastern Europe"       = "#F3AF32",
+  "Eastern Asia"                        = "#86BCB6",
+  "Southern Europe"                     = "#8172B2",
+  "Latin America & Caribbean"           = "#CC79A7",
+  "Middle East & North Africa"          = "#E1D8FF",
+  "Oceania"                             = "#FB9A99",
+  "South Asia"                          = "#0072B2",
+  "South-eastern Asia"                  = "#999999",
+  "Sub-Saharan Africa"                  = "#CCB974",
+  "US"                                  = "#C44E52",
+  "Western & Northern Europe"           = "#B2DF8A"
+  )) +
+    labs(y= "Net inflow index", x = "Period of mobility" ,color= "Region" ) +
+    geom_hline(yintercept = 0, linetype = "solid", size = 2) +
+
+  theme_bw() +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.border = element_blank(),
+    axis.ticks = element_line(size = 1.5),
+    axis.ticks.length = unit(0.3, "cm"),
+    axis.line = element_line(color = "grey30",size = 1.5),
+    axis.text.x = element_text(size = 35,hjust = 0.5, vjust = 0.5, , color = "black"),
+    axis.text.y = element_text(size = 35,margin = margin(0,10,0,10) , color = "black"),
+    axis.title.x = element_text(size = 50, margin = margin(t = 10)),
+    axis.title.y = element_text(size = 50, margin = margin(r = 10)),
+    plot.title = element_text(hjust =0, vjust = 0.5,size = 35, face = "bold"),
+    legend.title = element_text(size = 40),
+    legend.text = element_text(size =40),
+    legend.key.size = unit(1, "cm"),
+    legend.position = "bottom",
+    strip.text = element_text(size = 35),
+    strip.background = element_blank(),
+    strip.placement = "outside",
+    panel.spacing.y = unit(0.8, "cm")
+  )+
+  guides(color = guide_legend(nrow = 3))
+dev.off()
+
+```
+
+
+
+```{r}
+gain_lose_region<-read.csv("brain drain and gain--region.csv", header=T,sep=',',stringsAsFactors = FALSE,na.strings = "NA")
+nrow(gain_lose_region)
+
+gain_lose_region<- gain_lose_region %>% filter (n_outgoing>=10) %>% filter(n_incoming>=10)
+
+min(gain_lose_region$gain_index_stand)
+max(gain_lose_region$gain_index_stand)
+
+gain_lose_region <- gain_lose_region %>%
+  mutate(
+     period_first_mobility = factor(
+       period_first_mobility,
+      levels = c(1, 2, 3, 4,5),
+      labels = c("2000-2004", "2005-2009", "2010-2014", "2015-2019","2020-2024")
+    ),
+    region_destination = factor(region_destination)
+  )
+
+
+```
+
+```{r}
+# Figure 10
+png(file="Fig 10--Fig brain drain and gain--period--region.png", width=2400,height=1800) 
+ggplot(gain_lose_region, aes(x = factor(period_first_mobility),
+                   y = gain_index_stand,
+                   color = region_destination,
+                   group = region_destination)) +
+  geom_line(size = 2) +
+  
+  scale_y_continuous(limits = c(-0.8,0.8), breaks = seq(-0.8, 0.8, 0.2))+
+  facet_wrap(~ region_origin, nrow = 3, ncol = 4,
+              scales = "free_y"
+                ) +
+  scale_color_manual(values = c(
+   "CA"                                 = "#F0E442",
+  "Central Asia & Eastern Europe"       = "#F3AF32",
+  "Eastern Asia"                        = "#86BCB6" ,
+  "Southern Europe"                     = "#8172B2",
+  "Latin America & Caribbean"           = "#CC79A7",
+  "Middle East & North Africa"          = "#E1D8FF",
+  "Oceania"                             = "#FB9A99",
+  "South Asia"                          = "#0072B2",
+  "South-eastern Asia"                  = "#999999",
+  "Sub-Saharan Africa"                  = "#CCB974",
+  "US"                                  = "#C44E52",
+  "Western & Northern Europe"           = "#B2DF8A"
+  )) +
+    scale_x_discrete(expand = c(0.05, 0.05))+
+    labs(y= "Net inflow index", x = "Period of mobility" ,color= "Region" ) +
+    geom_hline(yintercept = 0, linetype = "solid", size = 2) +
+
+  theme_bw() +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.border = element_blank(),
+    axis.ticks = element_line(size = 1.5),
+    axis.ticks.length = unit(0.3, "cm"),
+    axis.line = element_line(color = "grey30",size = 1.5),
+    axis.text.x = element_text(size = 35,angle=30,hjust = 0.5, vjust = 1, margin = margin(t = 35) , color = "black"),
+    axis.text.y = element_text(size = 35,margin = margin(0,10,0,10) , color = "black"),
+    axis.title.x = element_text(size = 50, margin = margin(t = 10)),
+    axis.title.y = element_text(size = 50, margin = margin(r = 10)),
+    plot.title = element_text(hjust =0, vjust = 0.5,size = 35, face = "bold"),
+    legend.title = element_text(size = 40),
+    legend.text = element_text(size = 40),
+    legend.key.size = unit(1, "cm"),
+    legend.position = "bottom",
+    strip.text = element_text(size = 37),
+    strip.background = element_blank(),
+    strip.placement = "outside",
+    panel.spacing.y = unit(0.8, "cm")
+  )+
+  guides(color = guide_legend(nrow = 3))
+dev.off()
+
+
+```
+
+
+```{r}
+sa_return<-read.table(  "return--all--new.txt",  header = TRUE,  sep = "",  stringsAsFactors = FALSE)
+
+sa_return_2000 <-sa_return %>%
+  filter(first_year>=2000 & pub_year_gap<=2024) %>%
+  dplyr::filter(time_since_move >= 1)
+
+
+
+# --------------------------
+# 1) RAW 年度回流率
+# 分母 = 当年 risk-set 行数（包含 event 年那一行）
+# 分子 = 当年 event==1 的行数（首次回归事件）
+# --------------------------
+df_return<-sa_return_2000
+
+sa_return_region_origin<-read.table(  "return--all--region--rew.txt",  header = TRUE,  sep = "",  stringsAsFactors = FALSE)
+
+sa_return_region_origin<-sa_return_region_origin %>% select (researcher_id,region_origin)
+
+sa_return_region_origin<-unique(sa_return_region_origin)
+
+df_return_region_origin<-df_return %>%
+  left_join (sa_return_region_origin, by = "researcher_id")
+
+df_return_region_origin %>% filter (researcher_id=="ur.010050020067.69")
+
+
+
+```
+
+```{r}
+
+#Figure 11
+MAX_TSM=20
+
+# ---------------------------
+# 0) 构造 first-publication cohort（每5年一组，从2000开始）
+# ---------------------------
+
+
+# ---------------------------
+# 1) 统一样本框 & 风险期（与你之前一致）
+# ---------------------------
+df_use <- df_return_region_origin %>%
+  dplyr::filter(first_year >= 2000) %>%
+  dplyr::filter(time_since_move >= 1) %>%
+  dplyr::mutate(
+    calendar_year = pub_year_gap,
+    tsm = as.integer(pmin(time_since_move, MAX_TSM)),
+        move_age = as.integer(year_first_mobility - first_year + 1),
+
+    fp_cohort5 = as.integer(first_year)
+  ) %>%
+  dplyr::filter(!is.na(fp_cohort5))
+
+# ---------------------------
+# 2) Raw 年度回归率（overall）
+# ---------------------------
+tab_raw <- df_use %>%
+  dplyr::group_by(calendar_year) %>%
+  dplyr::summarise(
+    n_at_risk = dplyr::n(),
+    n_return  = sum(event, na.rm = TRUE),
+    raw = n_return / n_at_risk,
+    .groups = "drop"
+  )
+
+# ---------------------------
+# 3) Stage 标准化（tsm）
+#    R_stage(t) = Σ_s w_s * r_{s,t} / Σ_s w_s (over observed s in year t)
+# ---------------------------
+w_s <- df_use %>%
+  dplyr::count(tsm, name = "n") %>%
+  dplyr::mutate(w = n / sum(n)) %>%
+  dplyr::select(tsm, w)
+
+rt_st <- df_use %>%
+  dplyr::group_by(calendar_year, tsm) %>%
+  dplyr::summarise(
+    n_at_risk_s = dplyr::n(),
+    n_return_s  = sum(event, na.rm = TRUE),
+    r_st = n_return_s / n_at_risk_s,
+    .groups = "drop"
+  )
+
+tab_stage <- rt_st %>%
+  dplyr::left_join(w_s, by = "tsm") %>%
+  dplyr::group_by(calendar_year) %>%
+  dplyr::summarise(
+    stage = {
+      denom <- sum(w[!is.na(r_st)], na.rm = TRUE)
+      ifelse(denom > 0, sum(w * r_st, na.rm = TRUE) / denom, NA_real_)
+    },
+    .groups = "drop"
+  )
+
+# ---------------------------
+# 4) Stage + first-publication cohort 标准化（tsm × fp_cohort5）
+#    R_stage_fp(t) = Σ_{c,s} w_{c,s} * r_{c,s,t} / Σ_{c,s} w_{c,s} (over observed cells in year t)
+# ---------------------------
+w_cs <- df_use %>%
+  dplyr::count(fp_cohort5, tsm, name = "n") %>%
+  dplyr::mutate(w = n / sum(n)) %>%
+  dplyr::select(fp_cohort5, tsm, w)
+
+rt_cst <- df_use %>%
+  dplyr::group_by(calendar_year, fp_cohort5, tsm) %>%
+  dplyr::summarise(
+    n_at_risk_cs = dplyr::n(),
+    n_return_cs  = sum(event, na.rm = TRUE),
+    r_cst = n_return_cs / n_at_risk_cs,
+    .groups = "drop"
+  )
+
+tab_stage_fp <- rt_cst %>%
+  dplyr::left_join(w_cs, by = c("fp_cohort5", "tsm")) %>%
+  dplyr::group_by(calendar_year) %>%
+  dplyr::summarise(
+    stage_fp = {
+      denom <- sum(w[!is.na(r_cst)], na.rm = TRUE)
+      ifelse(denom > 0, sum(w * r_cst, na.rm = TRUE) / denom, NA_real_)
+    },
+    .groups = "drop"
+  )
+
+# ---------------------------
+# 5) 合并 & 转长表 & 画图
+# ---------------------------
+tab_all <- tab_raw %>%
+  dplyr::left_join(tab_stage,    by = "calendar_year") %>%
+  dplyr::left_join(tab_stage_fp, by = "calendar_year")
+
+tab_long <- tab_all %>%
+  tidyr::pivot_longer(
+    cols = c(raw, stage, stage_fp),
+    names_to = "series",
+    values_to = "return_rate"
+  ) %>%
+  dplyr::mutate(
+    series = factor(
+      series,
+      levels = c("raw", "stage", "stage_fp"),
+      labels = c("Raw", "Stage-standardized (tsm)", "First publication cohort and Duration of departure standardized")
+    )
+  )
+
+tab_long<- tab_long %>% filter (series != "Stage-standardized (tsm)")
+
+png(file="Fig 11--Fig return rate--stage--first year cohort-year.png", width=2000,height=1500) 
+ggplot(tab_long, aes(x = calendar_year, y = return_rate, color = series)) +
+  geom_line(size = 4) +
+  geom_point(size = 4) +
+    scale_x_continuous(limits = c(2000, 2025), breaks = c(2000, 2005, 2010,2015,2020,2024))+
+  labs(x = "Calendar year", y = "Annual return rate", color = NULL) +
+    theme_bw() +
+   theme(
+     panel.grid.minor = element_blank(),
+    panel.border = element_blank(),
+    axis.ticks = element_line(size = 1.5),
+    axis.ticks.length = unit(0.3, "cm"),
+    axis.line = element_line(color = "grey30",size = 1.5),
+    axis.text.x = element_text(size = 30, margin = margin(t = 10) , color = "black"),
+    axis.text.y = element_text(size = 30,margin = margin(0,10,0,10) , color = "black"),
+    axis.title.x = element_text(size = 30, margin = margin(t = 10)),
+    axis.title.y = element_text(size = 30, margin = margin(r = 10)),
+    plot.title = element_text(hjust =0, vjust = 0.5,size = 35, face = "bold"),
+    legend.position = "bottom",  
+    legend.title = element_text(size = 30), 
+    legend.text = element_text(size = 30),    
+    legend.key.size = unit(3, "cm") ,
+    strip.text = element_text(size = 30, face = "bold"),
+     strip.background = element_blank()
+  ) 
+
+
+view_rt_cst <- rt_cst %>%
+  arrange(calendar_year, fp_cohort5, tsm)
+
+# 打印前 20 行看看
+head(view_rt_cst, 20)
+
+# 建议：计算每个 Cohort 的平均归国率（跨越所有 TSM 和年份）
+# 如果不同 Cohort 差异巨大，就解释了为什么方案 A 影响大
+rt_cst %>%
+  group_by(fp_cohort5) %>%
+  summarise(avg_rate = mean(r_cst, na.rm = TRUE),
+            total_cases = sum(n_at_risk_cs))
+
+
+view_w_cs <- w_cs %>%
+  arrange(desc(w)) # 按权重从大到小排序
+
+head(view_w_cs, 20)
+
+```
+
+
+
+```{r}
+#Figure 12
+
+compute_return_rates_by_region <- function(df,
+                                           max_tsm = 20,
+                                           first_year_min = 2000,
+                                           tsm_min = 1,
+                                           region_col = "region_origin",
+                                           year_col = "pub_year_gap",
+                                           first_year_col = "first_year",
+                                           tsm_col = "time_since_move",
+                                           event_col = "event") {
+
+  # ---- basic checks ----
+  needed <- c(region_col, year_col, first_year_col, tsm_col, event_col)
+  miss <- setdiff(needed, names(df))
+  if (length(miss) > 0) {
+    stop("Missing required columns: ", paste(miss, collapse = ", "))
+  }
+
+  # ---- prepare data (统一样本框+风险期) ----
+  df_use <- df %>%
+    dplyr::filter(.data[[first_year_col]] >= first_year_min) %>%
+    dplyr::filter(.data[[tsm_col]] >= tsm_min) %>%
+    dplyr::mutate(
+      calendar_year = .data[[year_col]],
+      tsm = as.integer(pmin(.data[[tsm_col]], max_tsm)),
+      fp_cohort5 = as.integer(.data[[first_year_col]]),
+      region = .data[[region_col]],
+      event = .data[[event_col]]
+    ) %>%
+    dplyr::filter(!is.na(fp_cohort5)) %>%
+    dplyr::select(region, calendar_year, tsm, fp_cohort5, event)
+
+  # ---- raw: region × year ----
+  tab_raw <- df_use %>%
+    dplyr::group_by(region, calendar_year) %>%
+    dplyr::summarise(
+      n_at_risk = dplyr::n(),
+      n_return  = sum(event, na.rm = TRUE),
+      raw = n_return / n_at_risk,
+      .groups = "drop"
+    )
+
+  # ---- stage weights: w_{r,s} ----
+  w_rs <- df_use %>%
+    dplyr::count(region, tsm, name = "n") %>%
+    dplyr::group_by(region) %>%
+    dplyr::mutate(w = n / sum(n)) %>%
+    dplyr::ungroup() %>%
+    dplyr::select(region, tsm, w)
+
+  # ---- r_{r,s,t} ----
+  rt_rst <- df_use %>%
+    dplyr::group_by(region, calendar_year, tsm) %>%
+    dplyr::summarise(
+      n_at_risk_s = dplyr::n(),
+      n_return_s  = sum(event, na.rm = TRUE),
+      r_st = n_return_s / n_at_risk_s,
+      .groups = "drop"
+    )
+
+  # ---- stage standardized (renormalize over observed stages in that year) ----
+  tab_stage <- rt_rst %>%
+    dplyr::left_join(w_rs, by = c("region", "tsm")) %>%
+    dplyr::group_by(region, calendar_year) %>%
+    dplyr::summarise(
+      stage = {
+        denom <- sum(w[!is.na(r_st)], na.rm = TRUE)
+        ifelse(denom > 0, sum(w * r_st, na.rm = TRUE) / denom, NA_real_)
+      },
+      .groups = "drop"
+    )
+
+  # ---- stage+fp cohort weights: w_{r,c,s} ----
+  w_rcs <- df_use %>%
+    dplyr::count(region, fp_cohort5, tsm, name = "n") %>%
+    dplyr::group_by(region) %>%
+    dplyr::mutate(w = n / sum(n)) %>%
+    dplyr::ungroup() %>%
+    dplyr::select(region, fp_cohort5, tsm, w)
+
+  # ---- r_{r,c,s,t} ----
+  rt_rcst <- df_use %>%
+    dplyr::group_by(region, calendar_year, fp_cohort5, tsm) %>%
+    dplyr::summarise(
+      n_at_risk_cs = dplyr::n(),
+      n_return_cs  = sum(event, na.rm = TRUE),
+      r_cst = n_return_cs / n_at_risk_cs,
+      .groups = "drop"
+    )
+
+  # ---- stage+fp cohort standardized (renormalize over observed cells in that year) ----
+  tab_stage_fp <- rt_rcst %>%
+    dplyr::left_join(w_rcs, by = c("region", "fp_cohort5", "tsm")) %>%
+    dplyr::group_by(region, calendar_year) %>%
+    dplyr::summarise(
+      stage_fp = {
+        denom <- sum(w[!is.na(r_cst)], na.rm = TRUE)
+        ifelse(denom > 0, sum(w * r_cst, na.rm = TRUE) / denom, NA_real_)
+      },
+      .groups = "drop"
+    )
+
+  # ---- merge wide ----
+  tab_all <- tab_raw %>%
+    dplyr::left_join(tab_stage,    by = c("region", "calendar_year")) %>%
+    dplyr::left_join(tab_stage_fp, by = c("region", "calendar_year")) %>%
+    dplyr::rename(region_origin = region)
+
+  return(tab_all)
+}
+
+# ----------------------------
+# 用法：计算 + 转长表 + 3×4 facet 画图
+# ----------------------------
+
+tab_region <- compute_return_rates_by_region(df_return_region_origin)
+
+tab_region_long <- tab_region %>%
+  tidyr::pivot_longer(
+    cols = c(raw, stage, stage_fp),
+    names_to = "series",
+    values_to = "return_rate"
+  ) %>%
+  dplyr::mutate(
+    series = factor(
+      series,
+      levels = c("raw", "stage", "stage_fp"),
+      labels = c("Raw", "Stage-standardized (tsm)", "First publication cohort and Duration of departure standardized")
+    )
+  )
+
+tab_region_long <- tab_region_long %>% filter (series!="Stage-standardized (tsm)")
+unique(tab_region_long$region_origin)
+max(tab_region_long$return_rate)
+
+tab_region_long$region_origin = factor(tab_region_long$region_origin,
+                                levels = c("CA"  ,
+                "CAEE" ,
+                "EAA" ,
+                "LAC" ,
+                "MENA",
+                "OCA" ,
+                "SEA" ,
+                "SAA" ,
+               
+                "SE" ,
+                "SSA" ,
+                "US"  ,
+                "WNE" ))
+
+
+png(file="Fig 12--Fig return rate--stage--first year cohort--region of origin-year.png", width=2000,height=1500) 
+
+ggplot(tab_region_long, aes(x = calendar_year, y = return_rate, color = series)) +
+  geom_line(size = 2) +
+  geom_point(size = 1.2) +
+  facet_wrap(~ region_origin, nrow = 3, ncol = 4,
+             labeller = as_labeller(c(
+                "CA"  = "CA",
+                "CAEE" = "Central Asia & Eastern Europe",
+                "EAA" = "Eastern Asia",
+                "LAC" = "Latin America & Caribbean",
+                "MENA"= "Middle East & North Africa",
+                "OCA" = "Oceania",
+                "SEA" = "South-eastern Asia",
+                "SAA" = "South Asia",
+                
+                "SE" = "Southern Europe",
+                "SSA" = "Sub-Saharan Africa",
+                "US"  = "US",
+                "WNE" = "Western & Northern Europe"
+  ))) +
+  scale_x_continuous(limits = c(2000, 2025), breaks = c(2000, 2005, 2010,2015,2020,2024))+
+  scale_y_continuous(limits = c(0, 0.30), breaks = c(0, 0.05, 0.10,0.15,0.20,0.25,0.30))+
+
+  labs(x = "Calendar year", y = "Annual return rate", color = NULL) +
+   theme_bw() +
+   theme(
+     panel.grid.minor = element_blank(),
+    panel.border = element_blank(),
+    axis.ticks = element_line(size = 1.5),
+    axis.ticks.length = unit(0.3, "cm"),
+    axis.line = element_line(color = "grey30",size = 1.5),
+    axis.text.x = element_text(size = 25, margin = margin(t = 10) , color = "black"),
+    axis.text.y = element_text(size = 25,margin = margin(0,10,0,10) , color = "black"),
+    axis.title.x = element_text(size = 30, margin = margin(t = 10)),
+    axis.title.y = element_text(size = 30, margin = margin(r = 10)),
+    plot.title = element_text(hjust =0, vjust = 0.5,size = 35, face = "bold"),
+    legend.position = "bottom",  
+    legend.title = element_text(size = 30), 
+    legend.text = element_text(size = 30),    
+    legend.key.size = unit(3, "cm") ,
+    strip.text = element_text(size = 30, face = "bold"),
+     strip.background = element_blank()
+  ) 
+  
+
+```
